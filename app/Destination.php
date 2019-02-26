@@ -10,4 +10,8 @@ class Destination extends Model
     {
         return $this->hasMany("\App\Camp");
     }
+
+    protected $fillable = [
+        'name'
+    ];
 }

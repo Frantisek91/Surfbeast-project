@@ -15,8 +15,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get("/surf", "SurfController@index");
+Route::get("/index", "SurfController@index");
+Route::post("/show", "SurfController@show");
