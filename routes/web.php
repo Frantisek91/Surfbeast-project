@@ -17,3 +17,7 @@ Route::get('/', function () {
 
 Route::get("/index", "SurfController@index");
 Route::post("/show", "SurfController@show");
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
