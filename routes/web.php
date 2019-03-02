@@ -17,3 +17,11 @@ Route::get('/', function () {
 
 Route::get("/index", "SurfController@index");
 Route::post("/show", "SurfController@show");
+
+Route::get("/camps", 'CampController@index');
+
+Route::get("/camp/create", 'CampController@create');
+
+Route::post("/camp", 'CampController@store');
+
+Route::get('/camp/show/{id}', 'CampController@show');
