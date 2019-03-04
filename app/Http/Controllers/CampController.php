@@ -20,7 +20,7 @@ class CampController extends Controller
         $agencies = Agency::all();
         $destinations = Destination::all();
         $destination_camps = Destination::find(1)->camps;
-
+        
         return view('camps/index', compact('camps', 'agencies', 'destinations', 'destination_camps'));
     }
 
@@ -65,7 +65,7 @@ class CampController extends Controller
     {
         $camp = Camp::findOrFail($id);
 
-        return view('camps/show', 'camp');
+        return view('camps/show', compact('camp'));
     }
 
     /**
@@ -76,7 +76,9 @@ class CampController extends Controller
      */
     public function edit($id)
     {
-        //
+        $camp = Camp::findOrFail($id);
+
+        return view('camps/edit', compact('camp', 'agencies', 'destinations'));
     }
 
     /**
@@ -88,7 +90,14 @@ class CampController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $camp = Camp::findOrFail($id);
+        $camp->agency_id = $request->agency_id;
+        $camp->destination_id = $request->destination_id;
+        $camp->description = $request->description;
+
+        $camp->save();
+
+        return redirect(action("CampController@index"));
     }
 
     /**

@@ -21,7 +21,9 @@ Route::post("/show", "SurfController@show");
 Route::get("/camps", 'CampController@index');
 
 Route::get("/camp/create", 'CampController@create');
-
 Route::post("/camp", 'CampController@store');
 
 Route::get('/camp/show/{id}', 'CampController@show');
+
+Route::get('/camp/{id}/edit', 'CampController@edit');
+Route::put('/camp/{id}/edit', 'CampController@update');
