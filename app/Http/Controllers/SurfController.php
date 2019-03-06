@@ -20,7 +20,6 @@ class SurfController extends Controller
 
     public function show(Request $request)
     {
-
         $price_min = $request->price_min;
         $price_max = $request->price_max;
         $start = $request->start;
