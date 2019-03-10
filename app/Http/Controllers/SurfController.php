@@ -22,6 +22,8 @@ class SurfController extends Controller
 
     public function show(Request $request)
     {
+        $destination = \App\Destination::where('id', $request->destination_id)->first();
+
         DB::enableQueryLog();
         $price_min = $request->price_min;
         if (empty($price_min)) {
@@ -50,6 +52,6 @@ class SurfController extends Controller
                     ->where('price', '<=', $price_max);
             }])->get();
             
-        return view('search.show', compact('camps'));
+        return view('search.show', compact('camps', 'destination'));
     }
 }

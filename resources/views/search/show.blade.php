@@ -2,10 +2,13 @@
 
 @section('content')
 
+<h2>{{ $destination->name }}</h2>
+<br>
+<p>{{ $destination->description }}</p>
+
 @if(!empty($camps))
 
     @foreach ($camps as $camp)
-        <h2>{{ $camp->destination->name }}</h2>
         <h5>{{ $camp->agency->name }}</h5>
         <p>{{ $camp->description }}</p>
             <ul>
