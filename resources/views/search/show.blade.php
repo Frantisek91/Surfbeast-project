@@ -9,14 +9,19 @@
 @if(!empty($camps))
 
     @foreach ($camps as $camp)
-        <h5>{{ $camp->agency->name }}</h5>
-        <p>{{ $camp->description }}</p>
-            <ul>
-                @foreach ($camp->terms as $term)
-                    <li>Od: {{ $term->start }} Do: {{ $term->end }} Cena: {{ $term->price }}</li>
-                @endforeach
-            </ul>
+        
+        @if(!empty($camp->terms)){{-- value of property terms is not empty, but it is an empty array?? --}}
+            <h5>{{ $camp->agency->name }}</h5>
+            <p>{{ $camp->description }}</p>
+                <ul>
+                    @foreach ($camp->terms as $term)
+                        <li>Od: {{ $term->start }} Do: {{ $term->end }} Cena: {{ $term->price }}</li>
+                    @endforeach
+                </ul>
+        @endif
+    
     @endforeach
+
 @endif
 
 @endsection
