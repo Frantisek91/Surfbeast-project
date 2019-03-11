@@ -18,7 +18,6 @@ Route::get('/', function () {
 Route::get("/index", "SurfController@index");
 Route::post("/show", "SurfController@show");
 
-<<<<<<< HEAD
 Route::get("/camps", 'CampController@index');
 Route::get("/camp/create", 'CampController@create');
 Route::post("/camp", 'CampController@store');
@@ -37,7 +36,6 @@ Route::get('/term/create', 'TermsController@create');
 Route::post('/term', 'TermsController@store');
 Route::get('/term/{id}/edit', 'TermsController@edit');
 Route::put('/term/{id}/edit', 'TermsController@update');
-=======
 Route::resource('reviews', 'ReviewsController');
 Route::resource("destinations", "DestinationController");
 
@@ -45,4 +43,3 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
->>>>>>> ba1f2fdd3485e42b6491e88f42d1e6cad7b8a857
