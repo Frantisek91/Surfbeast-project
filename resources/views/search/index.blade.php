@@ -1,48 +1,28 @@
 @extends('layouts.app')
 
-@section('style')
-<style>
-
-</style>
-    
-@endsection
 @section('content')
 
-
-<<<<<<< HEAD
-<select name="destination_id" class="form-control">
-    @foreach($destinations as $destination)
-        <option value="{{ $destination->id }}">{{ $destination->name }}</option>
-    @endforeach
-</select>
-
-<input type="date" name="start" class="form-control" placeholder="Od kdy?"/>
-<input type="date" name="end" class="form-control" placeholder="Do kdy?"/>
-
-<input type="number" name="price_min" class="form-control" placeholder="Částka od"/>
-<input type="number" name="price_max" class="form-control" placeholder="do"/>
-
-<button type="submit" class="btn btn-primary">Najdi surf kemp</button>
-=======
 <div class="container">
+
     <form action="{{ action('SurfController@show') }}" method="POST">
-    @csrf
+        @csrf
 
-    <select name="destination" class="form-control">
-        @foreach($destinations as $destination)
-            <option value="{{ $destination->id }}">{{ $destination->name }}</option>
-        @endforeach
-    </select>
+        <select name="destination_id" class="form-control">
+            @foreach($destinations as $destination)
+                <option value="{{ $destination->id }}">{{ $destination->name }}</option>
+            @endforeach
+        </select>
 
-    <input type="date" name="start" class="form-control" placeholder="When do you want to go?"/>
-    <input type="date" name="end" class="form-control" placeholder="When do you want to come back?"/>
+        <input type="date" name="start" class="form-control" placeholder="Od kdy?"/>
+        <input type="date" name="end" class="form-control" placeholder="Do kdy?"/>
 
-    <input type="number" name="price_min" class="form-control" placeholder="Payment between this"/>
-    <input type="number" name="price_max" class="form-control" placeholder="and this"/>
+        <input type="number" name="price_min" class="form-control" placeholder="Částka od"/>
+        <input type="number" name="price_max" class="form-control" placeholder="do"/>
 
-    <button type="submit" class="btn btn-primary">Search</button>
+        <button type="submit" class="btn btn-primary">Najdi surf kemp</button>
 
     </form>
+    <br>
 
     <h1> TOP 10 Destinations </h1>
 
@@ -76,7 +56,6 @@
         </div>
     </div>
 
->>>>>>> ba1f2fdd3485e42b6491e88f42d1e6cad7b8a857
 
 </div>
 
