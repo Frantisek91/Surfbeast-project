@@ -19,6 +19,7 @@ Route::get("/index", "SurfController@index");
 Route::post("/show", "SurfController@show");
 
 Route::resource('reviews', 'ReviewsController');
+Route::resource("destinations", "DestinationController");
 
 Auth::routes();
 
