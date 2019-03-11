@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get("/index", "SurfController@index");
-Route::post("/show", "SurfController@show");
+Route::get("/show", "SurfController@show");
 
 Route::get("/camps", 'CampController@index');
 Route::get("/camp/create", 'CampController@create');
@@ -42,4 +42,3 @@ Route::resource("destinations", "DestinationController");
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-

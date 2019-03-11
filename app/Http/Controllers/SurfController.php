@@ -44,6 +44,13 @@ class SurfController extends Controller
 
         $camps = \App\Camp::
             where('destination_id', $request->destination_id)
+            ->whereHas('terms', function ($query) use ($price_min, $price_max, $start, $end) {
+                $query 
+                ->where('start', '>=', $start)
+                ->where('end', '<=', $end)
+                ->where('price', '>=', $price_min) 
+                ->where('price', '<=', $price_max);                    
+            })
             ->with(['terms' => function($q) use ($price_min, $price_max, $start, $end){
                 return $q
                     ->where('start', '>=', $start)
