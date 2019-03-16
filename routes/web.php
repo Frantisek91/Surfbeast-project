@@ -36,6 +36,7 @@ Route::get('/term/create', 'TermsController@create');
 Route::post('/term', 'TermsController@store');
 Route::get('/term/{id}/edit', 'TermsController@edit');
 Route::put('/term/{id}/edit', 'TermsController@update');
+
 Route::resource('reviews', 'ReviewsController');
 Route::resource("destinations", "DestinationController");
 

@@ -58,7 +58,7 @@ class SurfController extends Controller
                     ->where('price', '>=', $price_min) 
                     ->where('price', '<=', $price_max);                    
             }])->get();
-            
+
         return view('search.show', compact('camps', 'destination'));
     }
 }
