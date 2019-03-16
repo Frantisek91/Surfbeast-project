@@ -2,9 +2,10 @@
 
 @section('content')
 
-<h2>{{ $destination->name }}</h2>
-<br>
-<p>{{ $destination->description }}</p>
+<div class="container">
+    <h2>{{ $destination->name }}</h2>
+    <br>
+    <p>{{ $destination->description }}</p>
 
 @if(!empty($camps))
     @foreach ($camps as $camp)     
@@ -25,4 +26,5 @@
     @endforeach
 @endif
 
+</div>
 @endsection
