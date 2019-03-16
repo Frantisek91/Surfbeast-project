@@ -17,6 +17,4 @@
 </ul>
 
 <a href="/reviews/create">CREATE</a>
-
-
 @endsection

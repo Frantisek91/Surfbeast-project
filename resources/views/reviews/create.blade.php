@@ -4,10 +4,8 @@
 <a href="/reviews">BACK TO REVIEWS</a>
 <form method="POST" action="/reviews">
         @csrf
-        {{-- <div class="form-group">
-        <label>Name</label>
-        <input type="text" name='name' class="form-control" placeholder="John Doe">
-        </div> --}}
+
+        <input type="hidden" value="{{ $camp_id }}">
 
         <div class="form-group">
         <label>Overall Experience</label>
@@ -21,7 +19,6 @@
         </div>
 
         <div class="form-group">
-        <label>Describe your experience with this surf camp or agency</label>
         <textarea class="form-control" name="description" rows="3"></textarea>
         </div>
 
