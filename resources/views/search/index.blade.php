@@ -4,8 +4,7 @@
 
 <div class="container">
 
-    <form action="{{ action('SurfController@show') }}" method="POST">
-        @csrf
+    <form action="{{ action('SurfController@show') }}" method="get">
 
         <select name="destination_id" class="form-control">
             @foreach($destinations as $destination)
