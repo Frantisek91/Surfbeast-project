@@ -11,7 +11,6 @@
     @foreach ($camps as $camp)     
         @if(!empty($camp->terms))
             <a href="{{ action('AgencyController@show', $camp->agency_id) }}" target="_blank"><h5>{{ $camp->agency->name }}</h5></a>
-            <p>{{ $camp->description }}</p>
                 <ul>
                     @foreach ($camp->terms as $term)
                         <li>Od: {{ $term->start }} Do: {{ $term->end }} Cena: {{ $term->price }}</li>
