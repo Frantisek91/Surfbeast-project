@@ -27,8 +27,8 @@ class ChangeDatatypesTermsTable extends Migration
     public function down()
     {
         Schema::table('terms', function (Blueprint $table) {
-            $table->string('start');
-            $table->string('end');
+            $table->string('start')->change();
+            $table->string('end')->change();
         });
     }
 }

@@ -36,10 +36,13 @@ class DestinationController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
+        $data = $request->validate([
+            "name" => ["required"],
+            "description" => ["required"]
+        ]);
 
         $destination = Destination::create($data);
-
+        session()->flash('success_message', 'Destinace přidána');   
         return redirect(action("DestinationController@index"));
     }
 
@@ -78,8 +81,11 @@ class DestinationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $destination = Destination::findOrFail($id)->update($request->all());
-
+        $destination = Destination::findOrFail($id)->update($request->validate([
+            "name" => ["required"],
+            "description" => ["required"]
+        ]));
+        session()->flash('success_message', 'Destinace upravena');
         return redirect(action("DestinationController@index"));
     }
 
@@ -92,7 +98,7 @@ class DestinationController extends Controller
     public function destroy($id)
     {
         $destination = Destination::findOrFail($id)->delete();
-
+        session()->flash('delete_message', 'Destinace smazána');
         return redirect(action("DestinationController@index"));
     }
 }

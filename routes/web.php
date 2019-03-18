@@ -38,6 +38,9 @@ Route::get('/term/{id}/edit', 'TermsController@edit');
 Route::put('/term/{id}/edit', 'TermsController@update');
 
 Route::resource('reviews', 'ReviewsController');
+//
+Route::post("/camp/show/{camp}/comments", "ReviewsController@store");
+//
 Route::resource("destinations", "DestinationController");
 
 Auth::routes();
