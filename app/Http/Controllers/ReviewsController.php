@@ -27,7 +27,7 @@ class ReviewsController extends Controller
         $review['user_id'] = Auth::user()->id;
         $review['name'] = Auth::user()->name;
         $review['camp_id'] = 1;
-        // dd($review);
+
         Review::create($review);
 
         return redirect('/reviews')->with('success', 'Review Created');
