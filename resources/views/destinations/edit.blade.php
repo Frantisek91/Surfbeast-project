@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.app')
 
 @section('content')
 
@@ -6,6 +6,7 @@
     <h1>Upravit destinaci</h1>
 
     <form method="POST" action="{{ action("DestinationController@update", $destination->id)}}">
+        @include('errors')
         @method("PATCH")
         @csrf
         <div>
@@ -13,14 +14,13 @@
         </div>
         <br>
         <div>
-            <textarea name="description" cols="30" rows="10" placeholder="Popis">{{$destination->name}}</textarea>
+            <textarea name="description" cols="30" rows="10" placeholder="Popis">{{$destination->description}}</textarea>
         </div> 
         <br>
         <div>
             <button type="submit" class="btn btn-success"> Upravit Destinaci </button>
         </div>
 
-    {{--  @include('errors') --}}
 
     </form>
 </div>
