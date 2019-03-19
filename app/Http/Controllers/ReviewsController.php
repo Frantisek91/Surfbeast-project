@@ -23,18 +23,6 @@ class ReviewsController extends Controller
         return view('reviews.create');
     }
 
-    /* public function store(Request $request)
-    {
-        $review = $request->all();
-        $review['user_id'] = Auth::user()->id;
-        $review['name'] = Auth::user()->name;
-        $review['camp_id'] = 1;
-
-        Review::create($review);
-
-        return redirect('/reviews')->with('success', 'Review Created');
-    } */
-
     public function store(Camp $camp, User $user) 
     {
         Review::create([
@@ -44,7 +32,7 @@ class ReviewsController extends Controller
             "description" => request("description")
         ]);
         
-        return redirect(action("CampController@show", $camp->id, $user->id));
+        return redirect(action("CampController@show", $camp->id, $user->id))->with('success', 'Review Created');
     }
 
     public function show(Review $review)

@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Inquiry;
 
-class ReviewController extends Controller
+class InquiryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,7 +24,7 @@ class ReviewController extends Controller
      */
     public function create()
     {
-        //
+        return view('inquiries/create');
     }
 
     /**
@@ -34,7 +35,17 @@ class ReviewController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $inquiry = new Inquiry();
+        $inquiry->camp_id = $request->camp_id;
+        $inquiry->f_name = $request->f_name;
+        $inquiry->l_name = $request->l_name;
+        $inquiry->email = $request->email;
+        $inquiry->phone = $request->phone;
+        $inquiry->message = $request->message;
+        dd($request);
+        $inquiry->save();
+        
+        return redirect(action("CampController@show"));
     }
 
     /**

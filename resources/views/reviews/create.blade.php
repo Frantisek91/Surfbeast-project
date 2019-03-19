@@ -5,8 +5,6 @@
 <form method="POST" action="/reviews">
         @csrf
 
-        <input type="hidden" value="{{ $camp_id }}">
-
         <div class="form-group">
         <label>Overall Experience</label>
         <select class="form-control" name="rating">

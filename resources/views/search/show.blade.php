@@ -16,9 +16,7 @@
                         <li>Od: {{ $term->start }} Do: {{ $term->end }} Cena: {{ $term->price }}</li>
                     @endforeach
                 </ul>
-            <a href="{{ action('CampController@show', $camp->id) }}" target="_blank">
-                <button>Zobrazit detaily</button></a>
-            </form>
+            <a href="{{ action('CampController@show', $camp->id) }}" target="_blank" class="btn btn-primary">Zobrazit detaily</a>
             <br>
             <br>
         @endif

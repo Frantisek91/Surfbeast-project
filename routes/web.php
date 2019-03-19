@@ -43,6 +43,8 @@ Route::post("/camp/show/{camp}/comments", "ReviewsController@store");
 //
 Route::resource("destinations", "DestinationController");
 
+Route::resource("inquiries", "InquiryController");
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
