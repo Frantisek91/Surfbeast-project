@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Inquiry;
+use App\Camp;
 
 class InquiryController extends Controller
 {
@@ -22,9 +23,11 @@ class InquiryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        return view('inquiries/create');
+        $camp = Camp::findOrFail($id);
+
+        return view('inquiries/create', compact('camp'));
     }
 
     /**
@@ -33,19 +36,21 @@ class InquiryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
+        $camp = Camp::findOrFail($id);
         $inquiry = new Inquiry();
-        $inquiry->camp_id = $request->camp_id;
+
+        $inquiry->camp_id = $camp->id;
         $inquiry->f_name = $request->f_name;
         $inquiry->l_name = $request->l_name;
         $inquiry->email = $request->email;
         $inquiry->phone = $request->phone;
         $inquiry->message = $request->message;
-        dd($request);
+        
         $inquiry->save();
         
-        return redirect(action("CampController@show"));
+        return redirect(action("CampController@show", $camp->id));
     }
 
     /**

@@ -53,7 +53,7 @@
 
     <p>{{ $camp->instructors }}</p>
 
-    <a href="{{ action('InquiryController@create') }}" target="_blank" class="btn btn-primary">Zjistit obsazenost</a>
+    <a href="{{ action('InquiryController@create', $camp->id) }}" target="_blank" class="btn btn-primary">Zjistit obsazenost</a>
     <br>
     <br>
 
@@ -96,4 +96,5 @@
     </form>
 
 </div>
+
 @endsection
