@@ -53,7 +53,7 @@
 
     <p>{{ $camp->instructors }}</p>
 
-    <a href="{{ $camp->url }}" class="btn btn-primary">Rezervovat kemp</a>
+    <a href="{{ action('InquiryController@create') }}" target="_blank" class="btn btn-primary">Zjistit obsazenost</a>
     <br>
     <br>
 
