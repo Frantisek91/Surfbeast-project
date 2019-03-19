@@ -18,6 +18,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     @yield('style')
 
 </head>
@@ -90,6 +91,9 @@
             @yield('content')
         </main>
 
+        <div class="footer">
+            <p>Tohle je nas footer, ale zatim tu je jen tahle veta, protoze jeste nevime, co sem dat.</p>
+        </div>
     </div>
 </body>
 </html>

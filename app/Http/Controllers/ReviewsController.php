@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Auth;
 use App\Review;
 use App\User;
+use App\Camp;
+
 
 class ReviewsController extends Controller
 {
@@ -21,7 +23,7 @@ class ReviewsController extends Controller
         return view('reviews.create');
     }
 
-    public function store(Request $request)
+    /* public function store(Request $request)
     {
         $review = $request->all();
         $review['user_id'] = Auth::user()->id;
@@ -31,6 +33,18 @@ class ReviewsController extends Controller
         Review::create($review);
 
         return redirect('/reviews')->with('success', 'Review Created');
+    } */
+
+    public function store(Camp $camp, User $user) 
+    {
+        Review::create([
+            "camp_id" => $camp->id,
+            "user_id" => Auth::user()->id,
+            "rating" => request("rating"),
+            "description" => request("description")
+        ]);
+        
+        return redirect(action("CampController@show", $camp->id, $user->id));
     }
 
     public function show(Review $review)

@@ -1,26 +1,24 @@
-@extends('layout')
+@extends('layouts.app')
 
 @section('content')
-
 
     
 <div class="container">
     <h1>Přidat novou destinaci</h1>
     <form method="POST" action="{{ action("DestinationController@store")}}">
+        @include('errors')
         @csrf
         <div>
-            <input type="text" name="name" placeholder="Destinace" {{-- value="{{old("title")}}" --}}>
+            <input type="text" name="name" placeholder="Destinace" value="{{old("name")}}" required>
         </div>
         <br>
         <div>
-            <textarea name="description" cols="30" rows="10" placeholder="Popis">{{-- {{old("description")}} --}}</textarea>
+            <textarea name="description" cols="30" rows="10" placeholder="Popis" required>{{old("description")}}</textarea>
         </div> 
         <br>
         <div>
-            <button type="submit"> Přidat Destinaci </button>
+            <button type="submit" class="btn btn-success"> Přidat Destinaci </button>
         </div>
-
-    {{--  @include('errors') --}}
 
     </form>
 </div>
