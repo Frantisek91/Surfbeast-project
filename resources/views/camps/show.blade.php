@@ -6,6 +6,8 @@
 
     <h2>{{ $camp->agency->name }}</h2>
 
+    @include('alerts')
+
     <h3>{{ $camp->name }}</h3>
     <br>
 
@@ -57,6 +59,8 @@
     <br>
     <br>
 
+
+
     @if ($camp->reviews->count())
         <h5>Komentáře</h5>
 
@@ -64,6 +68,16 @@
             <h5>Od: {{$review->user->name}}</h5>
             <h5>Celkové hodnocení:{{$review->rating}}</h5>
             <p>Komentář:{{$review->description}}</p>
+
+            @can("admin")
+
+            <form method="POST" action="{{action("ReviewsController@destroy", $review->id) }}">
+              @method("DELETE")
+              @csrf
+              <button type="submit" class="btn btn-primary">Smazat</button>
+            </form>
+
+            @endcan 
             
         @endforeach  
 
@@ -85,7 +99,7 @@
 
         <div class="form-group">
           <label>Komentář:</label>
-          <textarea class="form-control" name="description" rows="3"></textarea>
+          <textarea class="form-control" name="description" rows="3" required></textarea>
         </div>
 
         <div class="form-group row">
