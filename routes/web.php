@@ -43,7 +43,6 @@ Route::post("/camp/show/{camp}/comments", "ReviewsController@store");
 //
 Route::resource("destinations", "DestinationController");
 
-Route::get("/camp/{id}/inquiry/create", "InquiryController@create");
 Route::post("/camp/{id}/inquiry/store", "InquiryController@store");
 
 Auth::routes();

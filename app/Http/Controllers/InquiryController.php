@@ -23,11 +23,9 @@ class InquiryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($id)
+    public function create()
     {
-        $camp = Camp::findOrFail($id);
-
-        return view('inquiries/create', compact('camp'));
+        //
     }
 
     /**
