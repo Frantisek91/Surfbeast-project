@@ -7,9 +7,9 @@
 
 <br />
 <br />
-
+@can("admin")
 <a href="{{ action("DestinationController@create") }}" class="btn btn-success">Přidat destinaci</a>
-
+@endcan
 <br />
 <br />
 

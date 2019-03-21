@@ -12,6 +12,7 @@ class DestinationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
     public function index()
     {
         $destinations = Destination::all();

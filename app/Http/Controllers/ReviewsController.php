@@ -11,6 +11,12 @@ use App\Camp;
 
 class ReviewsController extends Controller
 {
+    public function __construct()
+    {
+
+        $this->middleware('auth')->except('index');
+    }
+
     public function index(Review $review)
     {
         $reviews = Review::all();
@@ -23,16 +29,19 @@ class ReviewsController extends Controller
         return view('reviews.create');
     }
 
-    public function store(Camp $camp, User $user) 
+
+    public function store(Camp $camp) 
     {
+       
         Review::create([
             "camp_id" => $camp->id,
             "user_id" => Auth::user()->id,
             "rating" => request("rating"),
             "description" => request("description")
         ]);
-        
-        return redirect(action("CampController@show", $camp->id, $user->id))->with('success', 'Review Created');
+
+        session()->flash('success_message', 'Komentář přidán');
+        return redirect(action("CampController@show", $camp->id));
     }
 
     public function show(Review $review)
@@ -50,10 +59,11 @@ class ReviewsController extends Controller
         return redirect('/projects'); 
     }
 
-    public function destroy(Review $review)
-    {
+    public function destroy($id)
+    {   
+        $review = Review::findOrFail($id);  
         $review->delete();
-
-        return redirect('/reviews');
-    }
+        session()->flash('delete_message', 'Komentář smazán');
+        return redirect()->back();
+      }
 }
