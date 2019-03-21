@@ -52,6 +52,11 @@ body {
         }
     }
 
+    .cards {
+        display: flex;
+        justify-content: center;
+    }
+
     @media all and (min-width: 800px) {
         .form {
             max-width: none;
@@ -66,26 +71,17 @@ body {
             }
         }
 
-        .pictures-text {
+        .picture {
+            width: 100%; 
+            overflow: hidden; 
+
             img {
-                width: 30vw;
-                height: auto;
+                transition: transform .5s ease;
+
+                &:hover {
+                    transform: scale(1.5);
+                }
             }
         }
     }
 }
-
-
-
-
-/* .footer {
-    height: 20vh;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    padding: 1rem;
-    background-color: darkgrey;
-    color: white;
-    text-align: center;
-} */

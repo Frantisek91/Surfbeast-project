@@ -63,7 +63,7 @@
 
     <h1>3 nejlepsi volby podle nasich recenzi</h1>
 
-    <div class="row">
+    <div class="row container cards">
         <div class="col-md-4">
             <div class="card text-center">
             <div class="card-body">

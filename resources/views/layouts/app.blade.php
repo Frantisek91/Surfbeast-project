@@ -86,7 +86,7 @@
             @yield('content')
         </main>
 
-        <div class="footer">
+        <div class="footer navbar-fixed-bottom">
             <p>Tohle je nas footer, ale zatim tu je jen tahle veta, protoze jeste nevime, co sem dat.</p>
         </div>
     </div>

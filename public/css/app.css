@@ -10707,6 +10707,11 @@ body {
   padding: 5rem;
 }
 
+.homepage .cards {
+  display: flex;
+  justify-content: center;
+}
+
 @media all and (min-width: 800px) {
   .homepage .form {
     max-width: none;
@@ -10721,23 +10726,22 @@ body {
     padding: 15px;
   }
 
-  .homepage .pictures-text img {
-    width: 30vw;
-    height: auto;
+  .homepage .picture {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .homepage .picture img {
+    transition: -webkit-transform 0.5s ease;
+    transition: transform 0.5s ease;
+    transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+  }
+
+  .homepage .picture img:hover {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
   }
 }
-
-/* .footer {
-    height: 20vh;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    padding: 1rem;
-    background-color: darkgrey;
-    color: white;
-    text-align: center;
-} */
 
 .results .banner img {
   width: 100%;
@@ -10749,8 +10753,7 @@ body {
 }
 
 .content {
-  margin-bottom: -50px;
-  padding: 2rem;
+  min-height: 100vh;
 }
 
 .footer {
@@ -10758,7 +10761,7 @@ body {
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 50px;
+  height: 15vh;
   background-color: red;
   color: white;
   text-align: center;

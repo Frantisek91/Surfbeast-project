@@ -7,6 +7,8 @@ use App\Camp;
 use App\Agency;
 use App\Destination;
 
+use Illuminate\Support\Facades\DB;
+
 class CampController extends Controller
 {
     /**
@@ -16,12 +18,18 @@ class CampController extends Controller
      */
     public function index()
     {
-        $camps = Camp::all();
-        $agencies = Agency::all();
-        $destinations = Destination::all();
-        $destination_camps = Destination::find(1)->camps;
         
-        return view('camps/index', compact('camps', 'agencies', 'destinations', 'destination_camps'));
+        $camps = Camp::select(['*', 
+            DB::raw('(select AVG(`rating`) from `reviews` where `reviews`.`camp_id` = `camps`.`id`) as average_review')
+        ])
+        ->with('reviews')    
+        ->orderByRaw('average_review DESC')
+        ->limit(3)
+        ->get();
+
+        return $camps;
+
+        return view('camps/index');
     }
 
     /**
