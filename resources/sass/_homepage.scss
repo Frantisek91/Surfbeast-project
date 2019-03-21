@@ -1,0 +1,91 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: lightgray; 
+}
+
+.homepage {
+
+    .banner {
+        background-image: url(../img/beach.jpg);
+        min-width: 100vw;
+        min-height: 100vh;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+    }
+
+    .form {
+        padding-top: 250px;
+        margin: 0 auto; 
+        max-width: 250px;
+
+        .btn {
+            min-width: 4rem;
+        }
+    }
+
+    .slogan {
+        text-align: center;
+        padding: 20px;
+        font-size: 1.5rem;
+        border-bottom: 0.5rem solid darkgrey;
+        margin-bottom: 5vh;
+    }
+
+    .float {
+        font-size: 1.3rem;
+        
+        img {
+            width: 100%;
+        }
+
+        .text {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 5rem;
+        }
+    }
+
+    @media all and (min-width: 800px) {
+        .form {
+            max-width: none;
+
+            form {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 65vw;
+                margin: 0 auto;
+                padding: 15px;
+            }
+        }
+
+        .pictures-text {
+            img {
+                width: 30vw;
+                height: auto;
+            }
+        }
+    }
+}
+
+
+
+
+/* .footer {
+    height: 20vh;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: darkgrey;
+    color: white;
+    text-align: center;
+} */

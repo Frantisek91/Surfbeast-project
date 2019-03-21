@@ -2,28 +2,66 @@
 
 @section('content')
 
-<div class="container">
+<div class="homepage">
 
-    <form action="{{ action('SurfController@show') }}" method="get">
+    <section class="banner">
+        <div class="form">
+            <form action="{{ action('SurfController@show') }}" method="get">
 
-        <select name="destination_id" class="form-control">
-            @foreach($destinations as $destination)
-                <option value="{{ $destination->id }}">{{ $destination->name }}</option>
-            @endforeach
-        </select>
+                    <select name="destination_id" class="form-control">
+                        @foreach($destinations as $destination)
+                            <option value="{{ $destination->id }}">{{ $destination->name }}</option>
+                        @endforeach
+                    </select>
+            
+                    <input type="date" name="start" class="form-control" placeholder="Od kdy?"/>
+                    <input type="date" name="end" class="form-control" placeholder="Do kdy?"/>
+            
+                    <input type="number" name="price_min" class="form-control" placeholder="Částka od"/>
+                    <input type="number" name="price_max" class="form-control" placeholder="do"/>
+            
+                    <button type="submit" class="btn btn-primary">Najdi surf kemp</button>
+            
+                </form>
+                <br>
+        </div>
+    </section>
 
-        <input type="date" name="start" class="form-control" placeholder="Od kdy?"/>
-        <input type="date" name="end" class="form-control" placeholder="Do kdy?"/>
+    <div class="slogan">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. A velit, obcaecati ipsam labore non aut.</p>
+    </div>
 
-        <input type="number" name="price_min" class="form-control" placeholder="Částka od"/>
-        <input type="number" name="price_max" class="form-control" placeholder="do"/>
+    <div class="container pictures-text">
 
-        <button type="submit" class="btn btn-primary">Najdi surf kemp</button>
+        <div class="float row">
+            <div class="picture col-md-4">
+                <img src="{{ asset('/img/surf2.jpg') }}" alt="">
+            </div>
+            <div class="text col-md-8">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo harum voluptates voluptatum officia minima repellat numquam iste ut totam mollitia?
+            </div>
+        </div>
 
-    </form>
-    <br>
+        <div class="float row">
+                <div class="text col-md-8">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo harum voluptates voluptatum officia minima repellat numquam iste ut totam mollitia?
+                </div>
+                <div class="picture col-md-4">
+                    <img src="{{ asset('/img/surf2.jpg') }}" alt="">
+                </div>
+        </div>
 
-    <h1>10 důvodů, proč jet na surf kemp</h1>
+        <div class="float row">
+                <div class="picture col-md-4">
+                    <img src="{{ asset('/img/surf2.jpg') }}" alt="">
+                </div>
+                <div class="text col-md-8">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo harum voluptates voluptatum officia minima repellat numquam iste ut totam mollitia?
+                </div>
+        </div>
+    </div>
+
+    <h1>3 nejlepsi volby podle nasich recenzi</h1>
 
     <div class="row">
         <div class="col-md-4">

@@ -2,16 +2,17 @@
 
 @section('content')
     
-<div class="container">
+<div class="container results">
 
     <h2>{{ $camp->agency->name }}</h2>
 
     <h3>{{ $camp->name }}</h3>
     <br>
 
-    <h5>Popis</h5>
-
-    <p>{{ $camp->description }}</p>
+    <div class="banner col">
+        <img src="{{ asset('/img/surf2.jpg') }}" alt="" class="row-6 col-md-4">
+        <p class="row-6 col-md-4">{{ $camp->description }}</p>
+    </div>
 
     <h5>Ubytování</h5>
 

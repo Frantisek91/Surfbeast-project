@@ -18,8 +18,6 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    @yield('style')
 
 </head>
 <body>
@@ -41,13 +39,9 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
-                            
+                            {{-- //destinace, o nas, agentury --}}
                             <li class="nav-item">
                                 <a class="nav-link" href="/index">Homepage</a>
-                            </li>
-                            
-                            <li class="nav-item">
-                                <a class="nav-link" href="/search/show">Results of search</a>
                             </li>
 
                             <li class="nav-item">
@@ -87,7 +81,8 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="py-4 content">
+                {{-- class="py-4" --}}
             @yield('content')
         </main>
 

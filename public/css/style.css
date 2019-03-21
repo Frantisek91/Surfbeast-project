@@ -1,4 +1,42 @@
-.footer {
+/* * {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: lightgray; 
+}
+
+.banner {
+    background-image: url('../img/beach.jpg');
+    min-width: 100vw;
+    min-height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.form {
+    padding-top: 250px;
+    padding-left: 30px; 
+    max-width: 250px;
+}
+
+.slogan {
+    text-align: center;
+    padding: 20px;
+    font-size: 1.5rem;
+    border-bottom: 0.5rem solid darkgrey;
+    margin-bottom: 5vh;
+}
+
+img {
+    width: 100%;
+} */
+
+
+
+/* .footer {
     height: 20vh;
     position: absolute;
     right: 0;
@@ -8,4 +46,4 @@
     background-color: darkgrey;
     color: white;
     text-align: center;
-}
+} */
