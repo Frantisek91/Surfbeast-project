@@ -15,33 +15,64 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+ Route::group(['middleware' => ['can:admin']], function () {
+
+    Route::resource('/destinations', 'DestinationController')->except(['index', 'show']);
+
+    Route::get('/term/create', 'TermsController@create');
+    Route::post('/term', 'TermsController@store');
+    Route::get('/term/{id}/edit', 'TermsController@edit');
+    Route::put('/term/{id}/edit', 'TermsController@update');
+
+    Route::post("/camp", 'CampController@store');
+    Route::get("/camp/create", 'CampController@create');
+    Route::get('/camp/show/{id}', 'CampController@show');
+    Route::get('/camp/{id}/edit', 'CampController@edit');
+    Route::put('/camp/{id}/edit', 'CampController@update');
+
+    Route::get('/agency/create', 'AgencyController@create');
+    Route::post('/agency', 'AgencyController@store');
+    Route::get('/agency/{id}/edit', 'AgencyController@edit');
+    Route::put('/agency/{id}/edit', 'AgencyController@update');
+
+    Route::delete("/camp/show/{camp}", "ReviewsController@destroy");
+    
+
+});
+
 Route::get("/index", "SurfController@index");
 Route::get("/show", "SurfController@show");
 
 Route::get("/camps", 'CampController@index');
-Route::get("/camp/create", 'CampController@create');
-Route::post("/camp", 'CampController@store');
+Route::get('/camp/show/{id}', 'CampController@show');
+/* Route::post("/camp", 'CampController@store');
 Route::get('/camp/show/{id}', 'CampController@show');
 Route::get('/camp/{id}/edit', 'CampController@edit');
-Route::put('/camp/{id}/edit', 'CampController@update');
+Route::put('/camp/{id}/edit', 'CampController@update'); */
 
 Route::get('/agencies', 'AgencyController@index');
-Route::get('/agency/create', 'AgencyController@create');
+Route::get('/agency/show/{id}', 'AgencyController@show');
+
+/* Route::get('/agency/create', 'AgencyController@create');
 Route::post('/agency', 'AgencyController@store');
 Route::get('/agency/show/{id}', 'AgencyController@show');
 Route::get('/agency/{id}/edit', 'AgencyController@edit');
-Route::put('/agency/{id}/edit', 'AgencyController@update');
+Route::put('/agency/{id}/edit', 'AgencyController@update'); */
 
-Route::get('/term/create', 'TermsController@create');
+/* Route::get('/term/create', 'TermsController@create');
 Route::post('/term', 'TermsController@store');
 Route::get('/term/{id}/edit', 'TermsController@edit');
-Route::put('/term/{id}/edit', 'TermsController@update');
+Route::put('/term/{id}/edit', 'TermsController@update'); */
 
-Route::resource('reviews', 'ReviewsController');
+//Route::resource('reviews', 'ReviewsController');
 //
-Route::post("/camp/show/{camp}/comments", "ReviewsController@store");
+Route::post("/camp/show/{camp}", "ReviewsController@store");
 //
-Route::resource("destinations", "DestinationController");
+/* Route::resource("destinations", "DestinationController");  */
+
+Route::get("destinations", "DestinationController@index"); 
+Route::get("destinations/show/{id}", "DestinationController@show"); 
+
 
 Route::post("/camp/{id}/inquiry/store", "InquiryController@store");
 

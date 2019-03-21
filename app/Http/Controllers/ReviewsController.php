@@ -11,6 +11,12 @@ use App\Camp;
 
 class ReviewsController extends Controller
 {
+    public function __construct()
+    {
+
+        $this->middleware('auth')->except('index');
+    }
+
     public function index(Review $review)
     {
         $reviews = Review::all();
@@ -23,28 +29,17 @@ class ReviewsController extends Controller
         return view('reviews.create');
     }
 
-    /* public function store(Request $request)
+    public function store(Camp $camp) 
     {
-        $review = $request->all();
-        $review['user_id'] = Auth::user()->id;
-        $review['name'] = Auth::user()->name;
-        $review['camp_id'] = 1;
-        // dd($review);
-        Review::create($review);
-
-        return redirect('/reviews')->with('success', 'Review Created');
-    } */
-
-    public function store(Camp $camp, User $user) 
-    {
+       
         Review::create([
             "camp_id" => $camp->id,
             "user_id" => Auth::user()->id,
             "rating" => request("rating"),
             "description" => request("description")
         ]);
-        
-        return redirect(action("CampController@show", $camp->id, $user->id));
+        session()->flash('success_message', 'Komentář přidán');
+        return redirect(action("CampController@show", $camp->id));
     }
 
     public function show(Review $review)
@@ -62,10 +57,11 @@ class ReviewsController extends Controller
         return redirect('/projects'); 
     }
 
-    public function destroy(Review $review)
-    {
+    public function destroy($id)
+    {   
+        $review = Review::findOrFail($id);  
         $review->delete();
-
-        return redirect('/reviews');
-    }
+        session()->flash('delete_message', 'Komentář smazán');
+        return redirect()->back();
+      }
 }
