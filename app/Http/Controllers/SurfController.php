@@ -23,6 +23,7 @@ class SurfController extends Controller
     public function show(Request $request)
     {
         $destination = \App\Destination::where('id', $request->destination_id)->first();
+        $destinations = \App\Destination::all();
 
         DB::enableQueryLog();
         $price_min = $request->price_min;
@@ -37,10 +38,14 @@ class SurfController extends Controller
         if (empty($start)) {
             $start = date("Y-m-d");
         }
+
         $end = $request->end;
         if (empty($end)) {
             $end = Term::max('end');
         }
+
+        $sort = $request->input('sort', 'start-asc');
+        $sortArray = explode('-', $sort);
 
         $camps = \App\Camp::
             where('destination_id', $request->destination_id)
@@ -51,14 +56,15 @@ class SurfController extends Controller
                 ->where('price', '>=', $price_min) 
                 ->where('price', '<=', $price_max);                    
             })
-            ->with(['terms' => function($q) use ($price_min, $price_max, $start, $end){
+            ->with(['terms' => function($q) use ($price_min, $price_max, $start, $end, $sortArray){
                 return $q
                     ->where('start', '>=', $start)
                     ->where('end', '<=', $end)
                     ->where('price', '>=', $price_min) 
-                    ->where('price', '<=', $price_max);                    
+                    ->where('price', '<=', $price_max)
+                    ->orderBy($sortArray[0], $sortArray[1]);
             }])->get();
 
-        return view('search.show', compact('camps', 'destination'));
+        return view('search.show', compact('camps', 'destination', 'destinations', 'price_min', 'price_max', 'start', 'end', 'sort'));
     }
 }
