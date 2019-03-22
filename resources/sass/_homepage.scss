@@ -76,10 +76,10 @@ body {
             overflow: hidden; 
 
             img {
-                transition: transform .5s ease;
+                transition: transform ease-in-out 300ms;
 
                 &:hover {
-                    transform: scale(1.5);
+                    transform: scale(1.2);
                 }
             }
         }
