@@ -1,0 +1,17 @@
+* {
+    box-sizing: border-box;
+}
+
+.destination {
+    background-image: url(../img/destinations_spain_1.jpg);
+    height: 400px;
+    background-position: 50% 90%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    h2,
+    p {
+        margin: 35px;
+        padding-top: 35px;
+    }
+}

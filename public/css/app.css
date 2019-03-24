@@ -10747,6 +10747,25 @@ body {
   width: 100%;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+.destination {
+  background-image: url(/images/destinations_spain_1.jpg?98ea5396e7f99c07aea8fa744808f92b);
+  height: 400px;
+  background-position: 50% 90%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+
+.destination h2,
+.destination p {
+  margin: 35px;
+  padding-top: 35px;
+}
+
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);

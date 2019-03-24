@@ -2,31 +2,31 @@
 
 @section('content')
 
-<div class="container">
+  <div class="destination">
     <h2>{{ $destination->name }}</h2>
-    <br>
     <p>{{ $destination->description }}</p>
+  </div>
 
-    <form action="{{ action('SurfController@show') }}" method="get">
+  <form action="{{ action('SurfController@show') }}" method="get">
 
-      <select name="destination_id" class="form-control">
+    <select name="destination_id" class="form-control">
         @foreach($destinations as $d)
             <option value="{{ $d->id }}" {{ $d->id == $destination->id ? "selected" : "" }}>{{ $d->name }}</option>
         @endforeach
-      </select>
+    </select>
 
-      <input type="date" name="start" class="form-control" placeholder="Od kdy?" value="{{ $start }}"/>
-      <input type="date" name="end" class="form-control" placeholder="Do kdy?" value="{{ $end }}"/>
+    <input type="date" name="start" class="form-control" placeholder="Od kdy?" value="{{ $start }}"/>
+    <input type="date" name="end" class="form-control" placeholder="Do kdy?" value="{{ $end }}"/>
 
-      <input type="number" name="price_min" class="form-control" placeholder="Částka od" value="{{ $price_min }}"/>
-      <input type="number" name="price_max" class="form-control" placeholder="do" value="{{ $price_max }}"/>
+    <input type="number" name="price_min" class="form-control" placeholder="Částka od" value="{{ $price_min }}"/>
+    <input type="number" name="price_max" class="form-control" placeholder="do" value="{{ $price_max }}"/>
 
-      <select name="sort" id="">
+    <select name="sort" id="">
         <option value="start-asc" {{ $sort == "start-asc" ? "selected" : "" }}>Od nejbližšího</option>
         <option value="start-desc" {{ $sort == "start-desc" ? "selected" : "" }}>Od nejpozdějšího</option>
-      </select>
+    </select>
 
-      <button type="submit" class="btn btn-primary">Uprav vyhledávání</button>
+    <button type="submit" class="btn btn-primary">Uprav vyhledávání</button>
 
   </form>
 
@@ -46,5 +46,4 @@
         @endforeach
     @endif
 
-</div>
 @endsection
