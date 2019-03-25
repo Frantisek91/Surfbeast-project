@@ -2,10 +2,38 @@
     box-sizing: border-box;
 }
 
-.destination {
+.destination.spain {
     background-image: url(../img/destinations_spain_1.jpg);
     height: 400px;
     background-position: 50% 90%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    h2,
+    p {
+        margin: 35px;
+        padding-top: 35px;
+    }
+}
+
+.destination.bali {
+    background-image: url(../img/destinations_bali_1.jpg);
+    height: 400px;
+    background-position: 50% 75%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    h2,
+    p {
+        margin: 35px;
+        padding-top: 35px;
+    }
+}
+
+.destination.france {
+    background-image: url(../img/destinations_france_1.jpg);
+    height: 400px;
+    background-position: 50% 70%;
     background-repeat: no-repeat;
     background-size: cover;
     color: white;

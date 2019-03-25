@@ -2,10 +2,22 @@
 
 @section('content')
 
-  <div class="destination">
+@if($destination->id == 1)
+  <div class="destination spain">
     <h2>{{ $destination->name }}</h2>
     <p>{{ $destination->description }}</p>
   </div>
+@elseif($destination->id == 2)
+  <div class="destination bali">
+    <h2>{{ $destination->name }}</h2>
+    <p>{{ $destination->description }}</p>
+  </div>
+@elseif($destination->id == 3)
+  <div class="destination france">
+    <h2>{{ $destination->name }}</h2>
+    <p>{{ $destination->description }}</p>
+  </div>
+@endif
 
   <form action="{{ action('SurfController@show') }}" method="get">
 

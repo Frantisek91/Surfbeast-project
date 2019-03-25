@@ -10751,7 +10751,7 @@ body {
   box-sizing: border-box;
 }
 
-.destination {
+.destination.spain {
   background-image: url(/images/destinations_spain_1.jpg?98ea5396e7f99c07aea8fa744808f92b);
   height: 400px;
   background-position: 50% 90%;
@@ -10760,8 +10760,38 @@ body {
   color: white;
 }
 
-.destination h2,
-.destination p {
+.destination.spain h2,
+.destination.spain p {
+  margin: 35px;
+  padding-top: 35px;
+}
+
+.destination.bali {
+  background-image: url(/images/destinations_bali_1.jpg?0535be39e517758524a916b863c578e2);
+  height: 400px;
+  background-position: 50% 75%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+
+.destination.bali h2,
+.destination.bali p {
+  margin: 35px;
+  padding-top: 35px;
+}
+
+.destination.france {
+  background-image: url(/images/destinations_france_1.jpg?2c568d335e65aab5193fea23b1acc14a);
+  height: 400px;
+  background-position: 50% 70%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+
+.destination.france h2,
+.destination.france p {
   margin: 35px;
   padding-top: 35px;
 }
