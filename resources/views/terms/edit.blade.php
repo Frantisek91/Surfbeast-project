@@ -1,34 +1,40 @@
-<form method="post" action="{{ action("TermsController@update", $term->id) }}">
-    
-    @csrf
-    {{ method_field('PUT') }}
+@extends('layouts.app')
 
-    <div class="form-group">
-        <label>Camp:</label>
-        <select name="camp_id">
-                
-            @foreach ($camps as $camp)
-                <option value="{{ $camp->id }}">{{ $camp->description }}</option>    
-            @endforeach
+@section('content')
+<div class="container">
+    <form method="post" action="{{ action("TermsController@update", $term->id) }}">
+        @csrf
+        @include('errors')
+        @include('alerts')
+        {{ method_field('PUT') }}
+        <h1>Upravit termín</h1>
 
-        </select>
-    </div><br>
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Název kempu</label>
+            <select name="camp_id" class="form-control" id="camp_id">
+                @foreach ($camps as $camp)
+                    <option value="{{ $camp->id }}">{{ $camp->name }}</option>    
+                @endforeach
+            </select>
+        </div>
 
-    <div class="form-group">
-        <label>Start date:</label>
-    <input type="date" name="start" value="{{ $term->start }}">
-    </div><br>
+        <div class="form-group">
+            <label for="formGroupExampleInput">Od:</label>
+            <input name="start" type="date" class="form-control" id="formGroupExampleInput" placeholder="" value="{{ $term->start }}" required>
+        </div>
 
-    <div class="form-group">
-        <label>End date:</label>
-        <input type="date" name="end" value="{{ $term->end }}">
-    </div><br>
+        <div class="form-group">
+            <label for="formGroupExampleInput">Od:</label>
+            <input name="end" type="date" class="form-control" id="formGroupExampleInput" placeholder="" value="{{ $term->end }}" required>
+        </div>
 
-    <div class="form-group">
-        <label>Price:</label>
-        <input type="number" name="price" value="{{ $term->price }}">
-    </div><br>
+        <div class="form-group">
+            <label for="formGroupExampleInput">Cena:</label>
+            <input name="price" type="number" class="form-control" id="formGroupExampleInput" placeholder="" value="{{ $term->price }}" required>
+        </div>
 
-    <button type="submit" class="btn btn-primary">Edit terms</button>
+        <button type="submit" class="btn btn-primary">Upravit info</button>
 
-</form>
+    </form>
+</div>   
+@endsection

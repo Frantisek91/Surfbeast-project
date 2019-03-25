@@ -45,8 +45,8 @@ class TermsController extends Controller
         $term->price = $request->price;
 
         $term->save();
-
-        return redirect(action('TermsController@create'));
+        session()->flash('success_message', 'Termín přidán');
+        return redirect()->back();
     }
 
     /**
@@ -90,7 +90,7 @@ class TermsController extends Controller
         $term->price = $request->price;
 
         $term->save();
-
+        session()->flash('success_message', 'Upraveno');
         return redirect(action('TermsController@create'));
     }
 
@@ -102,6 +102,9 @@ class TermsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $Term = Term::findOrFail($id);  
+        $Term->delete();
+        session()->flash('delete_message', 'Termín smazán');
+        return redirect()->back();
     }
 }

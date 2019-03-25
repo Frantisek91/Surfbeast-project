@@ -41,12 +41,21 @@
                     <ul class="navbar-nav ml-auto">
                             {{-- //destinace, o nas, agentury --}}
                             <li class="nav-item">
-                                <a class="nav-link" href="/index">Homepage</a>
+                                <a class="nav-link" href={{route("index")}}>Hlavní stránka</a>
+                            </li>
+                            @can("admin")
+                            <li class="nav-item">
+                                <a class="nav-link" href={{route("agencies")}}>Agentury</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="/reviews">Reviews</a>
+                                <a class="nav-link" href={{route("destinations")}}>Destinace</a>
                             </li>
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href={{route("camps")}}>Kempy</a>
+                            </li>
+                            @endcan
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
@@ -83,7 +92,12 @@
 
         <main class="py-4 content">
                 {{-- class="py-4" --}}
-            @yield('content')
+          
+                
+                @yield('content')
+
+            
+            
         </main>
 
         <div class="footer navbar-fixed-bottom">

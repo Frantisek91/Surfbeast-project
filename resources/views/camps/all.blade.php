@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-
+<div class="container">
     <h1>Kempy</h1>
    
     @can("admin")
-    <a href="{{ action("CampController@create") }}" class="btn btn-success my-3">Přidat kemp</a>
+    <a href="{{ action("CampController@create") }}" class="btn btn-success my-3">Přidat nový kemp</a>
     @endcan
     <br>
     @include('alerts')
@@ -15,7 +15,7 @@
             <div class="card">
                 <div class="card-header" id="heading{{$camp->id}}}">
                     <h2 class="mb-0">
-                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{{$camp->id}}" aria-expanded="true" aria-controls="collapse{{$agency->id}}">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{{$camp->id}}" aria-expanded="true" aria-controls="collapse{{$camp->id}}">
                         {{ $camp->name }}
                     </button>
                     </h2>
@@ -24,8 +24,8 @@
 
             <div id="collapse{{$camp->id}}" class="collapse hide" aria-labelledby="heading{{$camp->id}}}" data-parent="#accordionExample">
                 <div class="card-body">
-                
-                    <p>{{ $camp->description }}</p>
+                    <h4>{{ $camp->adress }}</h4>
+                    <p>{{ $camp->about }}</p>
                     
                     <div class="d-flex">
                         @can("admin")
@@ -45,5 +45,5 @@
         </div>  
 
     @endforeach
-
+</div>
 @endsection

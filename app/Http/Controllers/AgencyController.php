@@ -14,7 +14,7 @@ class AgencyController extends Controller
      */
     public function index()
     {
-        $agencies = Agency::all();
+        $agencies = Agency::orderBy("name", "asc")->get();
 
         return view('agencies/index', compact('agencies'));
     }
@@ -43,7 +43,7 @@ class AgencyController extends Controller
         $agency->about = $request->about;
 
         $agency->save();
-
+        session()->flash('success_message', 'Agentura přidána');
         return redirect(action("AgencyController@index"));
     }
 
@@ -88,7 +88,7 @@ class AgencyController extends Controller
         $agency->about = $request->about;
 
         $agency->save();
-
+        session()->flash('success_message', 'Upraveno');
         return redirect(action("AgencyController@index"));
     }
 
@@ -100,6 +100,8 @@ class AgencyController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $agency = Agency::findOrFail($id)->delete();
+        session()->flash('delete_message', 'Smazáno');
+        return redirect(action("AgencyController@index"));
     }
 }
