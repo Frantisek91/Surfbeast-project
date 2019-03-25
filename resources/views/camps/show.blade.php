@@ -20,24 +20,13 @@
       <div class="terms">
           <ul>
               @foreach ($camp->terms as $term)
-                  <li class="d-flex my-2">Od: {{ $term->start }} Do: {{ $term->end }} Cena: {{ $term->price }} <button type="button" class="btn btn-primary mx-2" data-toggle="modal" data-target=".bd-example-modal-lg">Zjistit obsazenost</button>
-                    @can("admin")
-
-                    <form method="POST" action="{{action("TermsController@destroy", $term->id) }}">
-                      @method("DELETE")
-                      @csrf
-                      <button type="submit" class="btn btn-danger">Smazat</button>
-                    </form>
-      
-                    @endcan 
+                  <li class="d-flex my-2">Od: {{ $term->start }} Do: {{ $term->end }} Cena: {{ $term->price }} 
+                    <button type="button" class="btn btn-primary mx-2" data-toggle="modal" data-target=".bd-example-modal-lg">Zjistit obsazenost</button>
                   </li>
               @endforeach
           </ul>
       </div>
       
-      @can("admin")
-      <a href="{{ action("TermsController@create", $camp->id) }}" class="btn btn-success my-3">Přidat termín</a>
-      @endcan
       <br>
 
       <h5>Ubytování</h5>
@@ -119,12 +108,12 @@
                   </div>
 
                   <div class="form-group">
-                      <label for="formGroupExampleInput">Příjmení:</label>
+                      <label for="formGroupExampleInput">E-mail:</label>
                       <input name="email" type="email" class="form-control" id="formGroupExampleInput" placeholder="" value="{{old("email")}}" required>
                   </div>
 
                   <div class="form-group">
-                      <label for="formGroupExampleInput">Příjmení:</label>
+                      <label for="formGroupExampleInput">Telefon:</label>
                       <input name="phone" type="tel" class="form-control" id="formGroupExampleInput" placeholder="" value="{{old("phone")}}" required>
                   </div>
 

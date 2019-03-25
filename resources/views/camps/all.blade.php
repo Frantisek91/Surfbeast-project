@@ -9,8 +9,8 @@
     @endcan
     <br>
     @include('alerts')
-    @foreach ($camps as $camp)
 
+    @foreach ($camps as $camp)
         <div class="accordion" id="accordionExample">
             <div class="card">
                 <div class="card-header" id="heading{{$camp->id}}}">
@@ -24,26 +24,43 @@
 
             <div id="collapse{{$camp->id}}" class="collapse hide" aria-labelledby="heading{{$camp->id}}}" data-parent="#accordionExample">
                 <div class="card-body">
-                    <h4>{{ $camp->adress }}</h4>
-                    <p>{{ $camp->about }}</p>
-                    
-                    <div class="d-flex">
+                    <p>{{ $camp->description }}</p>
+
+                    <div class="d-flex my-3">
                         @can("admin")
-                        <a href="{{action("CampController@edit", $camp->id)}}" class = "btn btn-success">Upravit</a>
-                        <a href="{{ action("CampController@show", $camp->id) }}" class="btn btn-primary">Náhled</a>
+                        <a href="{{action("CampController@edit", $camp->id)}}" class = "btn btn-success mx-1">Upravit</a>
+                        <a href="{{ action("CampController@show", $camp->id) }}" class="btn btn-primary mx-1">Náhled</a>
+
                         <form method="POST" action="{{action("CampController@destroy", $camp->id)}}">
                             @method("DELETE")
                             @csrf
                             <div>
-                                <button type="submit" class="btn btn-danger">Smazat</button>
+                                <button type="submit" class="btn btn-danger mx-1">Smazat</button>
                             </div>
                         </form>
+                        <a href="{{ action("TermsController@create", $camp->id) }}" class="btn btn-warning mx-1">Přidat termín</a>
                         @endcan
-                    </div>                
+                    </div>        
+                    
+                    <h5>Dostupné termíny:</h5>
+                    <div class="terms">
+                        <ul>
+                            @foreach ($camp->terms as $term)
+                                <li class="d-flex my-2">Od: {{ $term->start }} Do: {{ $term->end }} Cena: {{ $term->price }}
+                                <a href="{{action("TermsController@edit", $term->id)}}" class = "btn btn-success mx-1">Upravit</a>
+                                    <form method="POST" action="{{action("TermsController@destroy", $term->id) }}">
+                                    @method("DELETE")
+                                    @csrf
+                                    <button type="submit" class="btn btn-danger mx-1">Smazat</button>
+                                    </form>                   
+                                    
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>                                
                 </div>            
             </div>    
         </div>  
-
     @endforeach
 </div>
 @endsection
