@@ -28,7 +28,6 @@ Route::get('/', function () {
     Route::get("/camps/all", 'CampController@all')->name("camps");
     Route::post("/camp", 'CampController@store');
     Route::get("/camp/create", 'CampController@create');
-    Route::get('/camp/show/{id}', 'CampController@show');
     Route::get('/camp/{id}/edit', 'CampController@edit');
     Route::put('/camp/{id}/edit', 'CampController@update');
     Route::delete('/camp/{id}', 'CampController@destroy');
@@ -50,6 +49,7 @@ Route::get("/index", "SurfController@index")->name("index");
 Route::get("/show", "SurfController@show");
 
 Route::get("/camps", 'CampController@index');
+Route::get('/camp/show/{id}', 'CampController@show');
 
 //Route::get('/camp/show/{id}', 'CampController@show');
 /* Route::post("/camp", 'CampController@store');

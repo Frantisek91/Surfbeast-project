@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<<<<<<< HEAD
 
 @if($destination->id == 1)
   <div class="destination spain">
@@ -21,26 +20,36 @@
 @endif
 
   <form action="{{ action('SurfController@show') }}" method="get">
-
-    <select name="destination_id" class="form-control">
-        @foreach($destinations as $d)
+    <div class="form-row d-flex justify-content-center my-3">
+      <div class="col">
+        <select name="destination_id" class="form-control">
+          @foreach($destinations as $d)
             <option value="{{ $d->id }}" {{ $d->id == $destination->id ? "selected" : "" }}>{{ $d->name }}</option>
-        @endforeach
-    </select>
-
-    <input type="date" name="start" class="form-control" placeholder="Od kdy?" value="{{ $start }}"/>
-    <input type="date" name="end" class="form-control" placeholder="Do kdy?" value="{{ $end }}"/>
-
-    <input type="number" name="price_min" class="form-control" placeholder="Částka od" value="{{ $price_min }}"/>
-    <input type="number" name="price_max" class="form-control" placeholder="do" value="{{ $price_max }}"/>
-
-    <select name="sort" id="">
-        <option value="start-asc" {{ $sort == "start-asc" ? "selected" : "" }}>Od nejbližšího</option>
-        <option value="start-desc" {{ $sort == "start-desc" ? "selected" : "" }}>Od nejpozdějšího</option>
-    </select>
-
-    <button type="submit" class="btn btn-primary">Uprav vyhledávání</button>
-
+          @endforeach
+        </select>
+      </div>
+      <div class="col">
+        <input type="date" name="start" class="form-control" placeholder="Od kdy?" value="{{ $start }}"/>
+      </div>
+      <div class="col">
+        <input type="date" name="end" class="form-control" placeholder="Do kdy?" value="{{ $end }}"/>
+      </div>
+      <div class="col">
+        <input type="number" name="price_min" class="form-control" placeholder="Částka od" value="{{ $price_min }}"/>
+      </div>
+      <div class="col">
+        <input type="number" name="price_max" class="form-control" placeholder="do" value="{{ $price_max }}"/>
+      </div>
+      <div class="col">
+        <select name="sort" id="" class="form-control">
+          <option value="start-asc" {{ $sort == "start-asc" ? "selected" : "" }}>Od nejbližšího</option>
+          <option value="start-desc" {{ $sort == "start-desc" ? "selected" : "" }}>Od nejpozdějšího</option>
+        </select>
+      </div>
+      <div class="col">
+        <button type="submit" class="btn btn-primary" class="form-control">Uprav vyhledávání</button>
+      </div>
+    </div>
   </form>
 
     @if(!empty($camps))
@@ -59,37 +68,4 @@
         @endforeach
     @endif
 
-=======
-<div class="container">
-    <div class="search-show">
-        <div class="banner">
-        
-            <h1>{{ $destination->name }}</h1>
-            
-        </div>
-        
-        <p>{{ $destination->description }}</p>
-
-        @if(!empty($camps))
-            @foreach ($camps as $camp)     
-                @if(!empty($camp->terms))
-                    <div class="results">
-                        <div class="agency">
-                            <a href="{{ action('AgencyController@show', $camp->agency_id) }}" target="_blank"><h5>{{ $camp->agency->name }}</h5></a>
-                        </div>
-                        <div class="terms">
-                            <ul>
-                                @foreach ($camp->terms as $term)
-                                    <li>Od: {{ $term->start }} Do: {{ $term->end }} Cena: {{ $term->price }}</li>
-                                @endforeach
-                            </ul>
-                        </div>    
-                        <a href="{{ action('CampController@show', $camp->id) }}" class="btn btn-primary mb-4">Zobrazit detaily</a>                
-                    </div>
-                @endif
-            @endforeach
-        @endif
-    </div>
-</div>
->>>>>>> styling-result-page
 @endsection
