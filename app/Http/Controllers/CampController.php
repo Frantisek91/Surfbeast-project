@@ -16,6 +16,13 @@ class CampController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function all()
+    {
+        $camps = Camp::orderBy("name", "asc")->get();
+        return view ("camps.all", compact("camps"));
+    }
+
     public function index()
     {
         
@@ -39,8 +46,8 @@ class CampController extends Controller
      */
     public function create()
     {
-        $agencies = Agency::all();
-        $destinations = Destination::all();
+        $agencies = Agency::orderBy("name", "asc")->get();
+        $destinations = Destination::orderBy("name", "asc")->get();
 
         return view('camps/create', compact('agencies', 'destinations'));
     }
@@ -56,11 +63,29 @@ class CampController extends Controller
         $camp = new Camp();
         $camp->agency_id = $request->agency_id;
         $camp->destination_id = $request->destination_id;
+        $camp->name = $request->name;
         $camp->description = $request->description;
+        $camp->accommodation = $request->accommodation;
+        $camp->catering = $request->catering;
+        $camp->transport = $request->transport;
+        $camp->insurance = $request->insurance;
+        $camp->transfer = $request->transfer;
+        $camp->schedule = $request->schedule;
+        $camp->surf_lessons = $request->surf_lessons;
+        $camp->equipment = $request->equipment;
+        $camp->skill_level = $request->skill_level;
+        $camp->instructors = $request->instructors;
+        $camp->image_url_1 = $request->image_url_1;
+        $camp->image_url_2 = $request->image_url_2;
+        $camp->image_url_3 = $request->image_url_3;
+        $camp->image_url_4 = $request->image_url_4;
+        $camp->image_url_5 = $request->image_url_5;
+        $camp->url = $request->url;
+        $camp->url_msw = $request->url_msw;
 
         $camp->save();
-
-        return redirect(action("CampController@index"));
+        session()->flash('success_message', 'Kemp přidán');
+        return redirect(action("CampController@all"));
     }
 
     /**
@@ -101,11 +126,29 @@ class CampController extends Controller
         $camp = Camp::findOrFail($id);
         $camp->agency_id = $request->agency_id;
         $camp->destination_id = $request->destination_id;
+        $camp->name = $request->name;
         $camp->description = $request->description;
+        $camp->accommodation = $request->accommodation;
+        $camp->catering = $request->catering;
+        $camp->transport = $request->transport;
+        $camp->insurance = $request->insurance;
+        $camp->transfer = $request->transfer;
+        $camp->schedule = $request->schedule;
+        $camp->surf_lessons = $request->surf_lessons;
+        $camp->equipment = $request->equipment;
+        $camp->skill_level = $request->skill_level;
+        $camp->instructors = $request->instructors;
+        $camp->image_url_1 = $request->image_url_1;
+        $camp->image_url_2 = $request->image_url_2;
+        $camp->image_url_3 = $request->image_url_3;
+        $camp->image_url_4 = $request->image_url_4;
+        $camp->image_url_5 = $request->image_url_5;
+        $camp->url = $request->url;
+        $camp->url_msw = $request->url_msw;
 
         $camp->save();
-
-        return redirect(action("CampController@index"));
+        session()->flash('success_message', 'Upraveno');
+        return redirect(action("CampController@all"));
     }
 
     /**
@@ -116,6 +159,9 @@ class CampController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $Camp = Camp::findOrFail($id);  
+        $Camp->delete();
+        session()->flash('delete_message', 'Kemp smazán');
+        return redirect()->back();
     }
 }
