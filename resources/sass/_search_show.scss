@@ -9,7 +9,11 @@
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
-    h2,
+    h2 {
+        font-family: $font-headings;
+        margin: 35px;
+        padding-top: 35px;
+    }
     p {
         margin: 35px;
         padding-top: 35px;

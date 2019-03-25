@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css?family=Sriracha);@charset "UTF-8";
 
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
@@ -10760,7 +10760,12 @@ body {
   color: white;
 }
 
-.destination.spain h2,
+.destination.spain h2 {
+  font-family: "Sriracha", cursive;
+  margin: 35px;
+  padding-top: 35px;
+}
+
 .destination.spain p {
   margin: 35px;
   padding-top: 35px;
