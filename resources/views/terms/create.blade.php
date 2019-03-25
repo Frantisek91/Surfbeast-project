@@ -2,21 +2,12 @@
 
 @section('content')
 <div class="container">  
-    <form method="post" action="{{ action("TermsController@store") }}">
+    <form method="POST" action="{{ action("TermsController@store", $camp->id) }}">
         @csrf
         @include('errors')
         @include('alerts')
         <h1>Přidat termín</h1>
         
-        <div class="form-group">
-            <label for="exampleFormControlSelect1">Název kempu</label>
-            <select name="camp_id" class="form-control" id="camp_id">
-                @foreach ($camps as $camp)
-                    <option value="{{ $camp->id }}">{{ $camp->name }}</option>    
-                @endforeach
-            </select>
-        </div>
-
         <div class="form-group">
             <label for="formGroupExampleInput">Od:</label>
             <input name="start" type="date" class="form-control" id="formGroupExampleInput" placeholder="" value="{{old("start")}}" required>

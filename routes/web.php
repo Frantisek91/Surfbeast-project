@@ -20,7 +20,7 @@ Route::get('/', function () {
     Route::resource('/destinations', 'DestinationController')->except(['index', 'show']);
 
     Route::get('/camp/{id}/term/create', 'TermsController@create');
-    Route::post('/term', 'TermsController@store');
+    Route::post('/camp/{id}/term/store', 'TermsController@store');
     Route::get('/term/{id}/edit', 'TermsController@edit');
     Route::put('/term/{id}/edit', 'TermsController@update');
     Route::delete('/term/{id}/edit', 'TermsController@destroy');

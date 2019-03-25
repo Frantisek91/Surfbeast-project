@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Camp;
 use App\Term;
+use App\Camp;
 
 class TermsController extends Controller
 {
@@ -23,11 +23,11 @@ class TermsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        $camps = Camp::all();
+        $camp = Camp::findOrFail($id);
 
-        return view('terms/create', compact('camps'));
+        return view('terms/create', compact('camp'));
     }
 
     /**
@@ -36,17 +36,19 @@ class TermsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
+        $camp = Camp::findOrFail($id);
         $term = new Term();
-        $term->camp_id = $request->camp_id;
+
+        $term->camp_id = $camp->id;
         $term->start = $request->start;
         $term->end = $request->end;
         $term->price = $request->price;
 
         $term->save();
         session()->flash('success_message', 'Termín přidán');
-        return redirect()->back();
+        return redirect(action("CampController@all"));
     }
 
     /**
@@ -83,15 +85,17 @@ class TermsController extends Controller
      */
     public function update(Request $request, $id)
     {
+        
         $term = Term::findOrFail($id);
-        $term->camp_id = $request->camp_id;
+
         $term->start = $request->start;
         $term->end = $request->end;
         $term->price = $request->price;
 
         $term->save();
+
         session()->flash('success_message', 'Upraveno');
-        return redirect(action('TermsController@create'));
+        return redirect(action("CampController@all"));
     }
 
     /**
