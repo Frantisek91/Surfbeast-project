@@ -10691,15 +10691,15 @@ body {
   margin-bottom: 5vh;
 }
 
-.homepage .float {
+.homepage .floating {
   font-size: 1.3rem;
 }
 
-.homepage .float img {
+.homepage .floating img {
   width: 100%;
 }
 
-.homepage .float .text {
+.homepage .floating .text {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10709,7 +10709,6 @@ body {
 
 .homepage .cards {
   display: flex;
-  justify-content: center;
 }
 
 .homepage .cards h1 {
@@ -10725,9 +10724,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 65vw;
+    width: 75vw;
     margin: 0 auto;
     padding: 15px;
+  }
+
+  .homepage .form form .formicka {
+    max-width: 15rem;
   }
 
   .homepage .picture {
