@@ -84,7 +84,7 @@
       <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
-            <form method="post" action="{{ action("InquiryController@store", $camp->id) }}">
+            <form method="post" action="{{ action("InquiryController@store", $term->id) }}">
 
               <div class="modal-header">
                 <h5 class="modal-title">Zjisti obsazenost a naplánuj si výlet svých snů!</h5>

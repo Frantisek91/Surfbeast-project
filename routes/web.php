@@ -80,7 +80,7 @@ Route::get("destinations", "DestinationController@index")->name("destinations");
 Route::get("destinations/show/{id}", "DestinationController@show"); 
 
 
-Route::post("/camp/{id}/inquiry/store", "InquiryController@store");
+Route::post("/term/{id}/inquiry/store", "InquiryController@store");
 
 Auth::routes();
 

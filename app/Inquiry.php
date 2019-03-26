@@ -8,6 +8,6 @@ class Inquiry extends Model
 {
     public function camp()
     {
-        return $this->belongsTo("\App\Camp");
+        return $this->belongsTo("\App\Term");
     }
 }

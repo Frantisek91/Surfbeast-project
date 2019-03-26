@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Inquiry;
 use App\Camp;
+use App\Term;
 
 class InquiryController extends Controller
 {
@@ -36,10 +37,10 @@ class InquiryController extends Controller
      */
     public function store(Request $request, $id)
     {
-        $camp = Camp::findOrFail($id);
+        $term = Term::findOrFail($id);
         $inquiry = new Inquiry();
 
-        $inquiry->camp_id = $camp->id;
+        $inquiry->term_id = $term->id;
         $inquiry->f_name = $request->f_name;
         $inquiry->l_name = $request->l_name;
         $inquiry->email = $request->email;
@@ -47,8 +48,8 @@ class InquiryController extends Controller
         $inquiry->message = $request->message;
         
         $inquiry->save();
-        
-        return redirect(action("CampController@show", $camp->id));
+        session()->flash('success_message', 'Poptávka zaslána');
+        return redirect()->back();
     }
 
     /**
