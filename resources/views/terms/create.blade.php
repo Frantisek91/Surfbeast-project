@@ -1,32 +1,29 @@
-<form method="post" action="{{ action("TermsController@store") }}">
-    @csrf
+@extends('layouts.app')
 
-    <div class="form-group">
-        <label>Camp:</label>
-        <select name="camp_id">
-                
-            @foreach ($camps as $camp)
-                <option value="{{ $camp->id }}">{{ $camp->description }}</option>    
-            @endforeach
+@section('content')
+<div class="container">  
+    <form method="POST" action="{{ action("TermsController@store", $camp->id) }}">
+        @csrf
+        @include('errors')
+        @include('alerts')
+        <h1>Přidat termín</h1>
+        
+        <div class="form-group">
+            <label for="formGroupExampleInput">Od:</label>
+            <input name="start" type="date" class="form-control" id="formGroupExampleInput" placeholder="" value="{{old("start")}}" required>
+        </div>
 
-        </select>
-    </div><br>
+        <div class="form-group">
+            <label for="formGroupExampleInput">Od:</label>
+            <input name="end" type="date" class="form-control" id="formGroupExampleInput" placeholder="" value="{{old("end")}}" required>
+        </div>
 
-    <div class="form-group">
-        <label>Start date:</label>
-        <input type="date" name="start">
-    </div><br>
+        <div class="form-group">
+            <label for="formGroupExampleInput">Cena:</label>
+            <input name="price" type="number" class="form-control" id="formGroupExampleInput" placeholder="" value="{{old("price")}}" required>
+        </div>
 
-    <div class="form-group">
-        <label>End date:</label>
-        <input type="date" name="end">
-    </div><br>
+        <button type="submit" class="btn btn-primary">Přidat termín</button>
 
-    <div class="form-group">
-        <label>Price:</label>
-        <input type="number" name="price">
-    </div><br>
-
-    <button type="submit" class="btn btn-primary">Add terms</button>
-
-</form>
+    </form>
+@endsection

@@ -45,6 +45,45 @@
         <div class="float">
             <div class="picture">
                 <img src="{{ asset('/img/surf2.jpg') }}" alt="">
+        <div class="float row">
+                <div class="text col-md-8">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo harum voluptates voluptatum officia minima repellat numquam iste ut totam mollitia?
+                </div>
+                <div class="picture col-md-4">
+                    <img src="{{ asset('/img/surf2.jpg') }}" alt="">
+                </div>
+        </div>
+
+        <div class="float row">
+                <div class="picture col-md-4">
+                    <img src="{{ asset('/img/surf2.jpg') }}" alt="">
+                </div>
+                <div class="text col-md-8">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo harum voluptates voluptatum officia minima repellat numquam iste ut totam mollitia?
+                </div>
+        </div>
+    </div>
+
+    <h1>3 nejlepsi volby podle nasich recenzi</h1>
+
+    <div class="row container cards">
+        @foreach($camps as $camp)
+        <div class="col-md-4">
+            <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">{{$camp->name}}</h5>
+                <p class="card-text">{{$camp->average_review}}</p>
+                <a href="{{ action("CampController@show", $camp->id) }}" class="btn btn-primary">Zjistit více</a>
+            </div>
+            </div>
+        </div>
+            @endforeach
+      {{--   <div class="col-md-4">
+            <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">Special title treatment</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
             <div class="text">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo harum voluptates voluptatum officia minima repellat numquam iste ut totam mollitia?
@@ -92,7 +131,7 @@
                 </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 
 </div>

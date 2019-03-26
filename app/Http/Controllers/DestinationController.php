@@ -15,7 +15,7 @@ class DestinationController extends Controller
     
     public function index()
     {
-        $destinations = Destination::all();
+        $destinations = Destination::orderBy("name", "asc")->get();
         return view ("destinations.index", compact("destinations"));
     }
 
@@ -86,7 +86,7 @@ class DestinationController extends Controller
             "name" => ["required"],
             "description" => ["required"]
         ]));
-        session()->flash('success_message', 'Destinace upravena');
+        session()->flash('success_message', 'Upraveno');
         return redirect(action("DestinationController@index"));
     }
 
@@ -99,7 +99,7 @@ class DestinationController extends Controller
     public function destroy($id)
     {
         $destination = Destination::findOrFail($id)->delete();
-        session()->flash('delete_message', 'Destinace smazána');
+        session()->flash('delete_message', 'Smazáno');
         return redirect(action("DestinationController@index"));
     }
 }

@@ -1,24 +1,27 @@
 @extends('layouts.app')
 
 @section('content')
-
 <div class="container">
-    <h1>Upravit destinaci</h1>
+    <h1>Upravit info</h1>
 
     <form method="POST" action="{{ action("DestinationController@update", $destination->id)}}">
-        @include('errors')
-        @method("PATCH")
         @csrf
-        <div>
-            <input type="text" name="name" placeholder="Destinace" value="{{$destination->name}}">
+        {{ method_field('PATCH') }}
+        @include('errors')
+        @include('alerts')
+
+        <div class="form-group">
+            <label for="formGroupExampleInput">Destinace</label>
+            <input name="name" type="text" class="form-control" id="formGroupExampleInput" value="{{ $destination->name }}">
         </div>
-        <br>
+
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Krátký popis destinace</label>
+            <textarea name ="description" class="form-control" id="exampleFormControlTextarea1" rows="3" required>{{$destination->description}}<</textarea>
+        </div>
+ 
         <div>
-            <textarea name="description" cols="30" rows="10" placeholder="Popis">{{$destination->description}}</textarea>
-        </div> 
-        <br>
-        <div>
-            <button type="submit" class="btn btn-success"> Upravit Destinaci </button>
+            <button type="submit" class="btn btn-success"> Upravit</button>
         </div>
 
 

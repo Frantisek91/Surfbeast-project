@@ -6,8 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Term extends Model
 {
+    protected $guarded = [];
+    
     public function camp()
     {
         return $this->belongsTo("\App\Camp");
+    }
+
+    public function inquiries()
+    {
+        return $this->hasMany("\App\Inquiry");
     }
 }

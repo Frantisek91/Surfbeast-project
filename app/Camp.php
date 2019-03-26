@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Camp extends Model
 {
+    protected $guarded = [];
+
+
     public function agency()
     {
         return $this->belongsTo("\App\Agency");
@@ -24,10 +27,5 @@ class Camp extends Model
     public function reviews()
     {
         return $this->hasMany("\App\Review");
-    }
-
-    public function inquiries()
-    {
-        return $this->hasMany("\App\Inquiry");
     }
 }

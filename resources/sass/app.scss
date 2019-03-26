@@ -1,6 +1,7 @@
 
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url("https://fonts.googleapis.com/css?family=Poppins");
 
 // Variables
 @import 'variables';
@@ -11,9 +12,11 @@
 //style
 @import './homepage';
 @import './results';
+@import './search_show';
+
 
 .navbar-laravel {
-  background-color: #fff;
+  background-color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 

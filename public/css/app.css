@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css?family=Poppins);@charset "UTF-8";
 
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
@@ -72,7 +72,7 @@ body {
   line-height: 1.6;
   color: #212529;
   text-align: left;
-  background-color: #f8fafc;
+  background-color: white;
 }
 
 [tabindex="-1"]:focus {
@@ -517,7 +517,7 @@ mark,
 
 .img-thumbnail {
   padding: 0.25rem;
-  background-color: #f8fafc;
+  background-color: white;
   border: 1px solid #dee2e6;
   border-radius: 0.25rem;
   max-width: 100%;
@@ -4095,15 +4095,15 @@ input[type=button].btn-block {
 }
 
 .custom-range:focus::-webkit-slider-thumb {
-  box-shadow: 0 0 0 1px #f8fafc, 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
+  box-shadow: 0 0 0 1px white, 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
 }
 
 .custom-range:focus::-moz-range-thumb {
-  box-shadow: 0 0 0 1px #f8fafc, 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
+  box-shadow: 0 0 0 1px white, 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
 }
 
 .custom-range:focus::-ms-thumb {
-  box-shadow: 0 0 0 1px #f8fafc, 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
+  box-shadow: 0 0 0 1px white, 0 0 0 0.2rem rgba(52, 144, 220, 0.25);
 }
 
 .custom-range::-moz-focus-outer {
@@ -4303,8 +4303,8 @@ input[type=button].btn-block {
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
   color: #495057;
-  background-color: #f8fafc;
-  border-color: #dee2e6 #dee2e6 #f8fafc;
+  background-color: white;
+  border-color: #dee2e6 #dee2e6 white;
 }
 
 .nav-tabs .dropdown-menu {
@@ -10660,7 +10660,7 @@ a.text-dark:focus {
 }
 
 body {
-  background-color: lightgray;
+  background-color: white;
 }
 
 .homepage .banner {
@@ -10736,14 +10736,14 @@ body {
   }
 
   .homepage .picture img {
-    transition: -webkit-transform 0.5s ease;
-    transition: transform 0.5s ease;
-    transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+    transition: -webkit-transform ease-in-out 300ms;
+    transition: transform ease-in-out 300ms;
+    transition: transform ease-in-out 300ms, -webkit-transform ease-in-out 300ms;
   }
 
   .homepage .picture img:hover {
-    -webkit-transform: scale(1.5);
-            transform: scale(1.5);
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
   }
 
   .homepage .middle {
@@ -10757,8 +10757,45 @@ body {
   }
 }
 
+* {
+  box-sizing: border-box;
+}
+
+.destination {
+  height: 400px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+
+.destination h2,
+.destination p {
+  font-family: "Poppins", sans-serif;
+  margin: 0 45px;
+  padding-top: 45px;
+}
+
+h2 {
+  font-size: 2.7rem;
+}
+
+.destination.spain {
+  background-image: url(/images/destinations_spain_1.jpg?98ea5396e7f99c07aea8fa744808f92b);
+  background-position: 50% 90%;
+}
+
+.destination.bali {
+  background-image: url(/images/destinations_bali_1.jpg?0535be39e517758524a916b863c578e2);
+  background-position: 50% 75%;
+}
+
+.destination.france {
+  background-image: url(/images/destinations_france_1.jpg?2c568d335e65aab5193fea23b1acc14a);
+  background-position: 50% 70%;
+}
+
 .navbar-laravel {
-  background-color: #fff;
+  background-color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
