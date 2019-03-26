@@ -64,6 +64,17 @@
     <h1>3 nejlepsi volby podle nasich recenzi</h1>
 
     <div class="row container cards">
+            {{-- @foreach($camps as $camp)
+            <div class="col-md-4">
+                <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title">{{$camp->name}}</h5>
+                    <p class="card-text">{{$camp->average_review}}</p>
+                    <a href="{{ action("CampController@show", $camp->id) }}" class="btn btn-primary">Zjistit více</a>
+                </div>
+                </div>
+            </div>
+            @endforeach --}}
         <div class="col-md-4">
             <div class="card text-center">
             <div class="card-body">

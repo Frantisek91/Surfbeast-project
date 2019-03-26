@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Term;
+use App\Camp;
 use Illuminate\Support\Facades\DB;
 
 class SurfController extends Controller
@@ -16,8 +17,15 @@ class SurfController extends Controller
     public function index()
     {
         $destinations = \App\Destination::all();
+        /* $camps = Camp::select(['*', 
+            DB::raw('(select AVG(`rating`) from `reviews` where `reviews`.`camp_id` = `camps`.`id`) as average_review')
+        ])
+        ->with('reviews')    
+        ->orderByRaw('average_review DESC')
+        ->limit(3)
+        ->get(); */
 
-        return view('search.index', compact('destinations'));
+        return view('search.index', compact('destinations', "camps"));
     }
 
     public function show(Request $request)
