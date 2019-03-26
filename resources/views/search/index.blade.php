@@ -78,60 +78,7 @@
             </div>
         </div>
             @endforeach
-      {{--   <div class="col-md-4">
-            <div class="card text-center">
-            <div class="card-body">
-                <h5 class="card-title">Special title treatment</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-            <div class="text">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo harum voluptates voluptatum officia minima repellat numquam iste ut totam mollitia?
-            </div>
-        </div>
-        
-        <div class="float">
-            <div class="picture">
-                <img src="{{ asset('/img/surf2.jpg') }}" alt="">
-            </div>
-            <div class="text">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo harum voluptates voluptatum officia minima repellat numquam iste ut totam mollitia?
-            </div>
-        </div>
-
-    </div>
-
-    <div class="cards container">
-        <h1>3 nejlepsi volby podle nasich recenzi</h1>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card text-center">
-                <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card text-center">
-                <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card text-center">
-                <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-                </div>
-            </div>
-        </div> --}}
+      
     </div>
 
 </div>
