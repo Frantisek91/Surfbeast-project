@@ -15,7 +15,7 @@
             <div class="card">
                 <div class="card-header" id="heading{{$camp->id}}}">
                     <h2 class="mb-0">
-                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{{$camp->id}}" aria-expanded="true" aria-controls="collapse{{$agency->id}}">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{{$camp->id}}" aria-expanded="true" aria-controls="collapse{{$camp->id}}">
                         {{ $camp->name }}
                     </button>
                     </h2>
@@ -24,7 +24,7 @@
 
             <div id="collapse{{$camp->id}}" class="collapse hide" aria-labelledby="heading{{$camp->id}}}" data-parent="#accordionExample">
                 <div class="card-body">
-                
+                    <h4>{{$camp->average_review}}</h4>  
                     <p>{{ $camp->description }}</p>
                     
                     <div class="d-flex">

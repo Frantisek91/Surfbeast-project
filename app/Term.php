@@ -12,4 +12,9 @@ class Term extends Model
     {
         return $this->belongsTo("\App\Camp");
     }
+
+    public function inquiries()
+    {
+        return $this->hasMany("\App\Inquiry");
+    }
 }

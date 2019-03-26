@@ -28,9 +28,4 @@ class Camp extends Model
     {
         return $this->hasMany("\App\Review");
     }
-
-    public function inquiries()
-    {
-        return $this->hasMany("\App\Inquiry");
-    }
 }
