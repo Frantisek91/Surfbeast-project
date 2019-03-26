@@ -27,7 +27,7 @@ class CampController extends Controller
         ->limit(3)
         ->get();
 
-        return $camps;
+        // return $camps;
 
         return view('camps/index');
     }

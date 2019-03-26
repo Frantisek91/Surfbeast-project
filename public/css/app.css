@@ -10712,6 +10712,10 @@ body {
   justify-content: center;
 }
 
+.homepage .cards h1 {
+  text-align: center;
+}
+
 @media all and (min-width: 800px) {
   .homepage .form {
     max-width: none;
@@ -10741,10 +10745,16 @@ body {
     -webkit-transform: scale(1.5);
             transform: scale(1.5);
   }
-}
 
-.results .banner img {
-  width: 100%;
+  .homepage .middle {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .homepage .cards {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .navbar-laravel {
@@ -10756,14 +10766,12 @@ body {
   min-height: 100vh;
 }
 
-.footer {
-  position: relative;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 15vh;
-  background-color: red;
-  color: white;
-  text-align: center;
+footer {
+  background-color: #263238;
+  color: #fff;
+}
+
+footer a {
+  color: #fff;
 }
 
