@@ -16,8 +16,7 @@
         <p class="row-6 col-md-7">{{ $camp->description }}</p>
     </div>
 
-    @if ($camp->terms->count())
-      <h5>Dostupné termíny</h5>
+      <h4>Dostupné termíny</h4>
       <div class="terms">
           <ul>
               @foreach ($camp->terms as $term)
@@ -27,10 +26,6 @@
               @endforeach
           </ul>
       </div>
-    @else 
-      <h5>Momentálně nenabízíme žádné termíny.</h5>
-    @endif    
-
       
       <br>
 
@@ -52,21 +47,9 @@
 
 
       <h5>Lokalita</h5>
-<<<<<<< HEAD
-
-      <div class="mapouter"><div class="gmap_canvas"><iframe width="450" height="338" id="gmap_canvas" src="{{ $camp->url }}" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div>
-      <br>
-      
-      <!-- This code is issued by Magicseaweed.com under license 1553174474_96736 for the website  only subject to terms and conditions
-      and this message being kept intact as part of the code. If you are not the license holder add this content to your website by registering at 
-      Magicseaweed.com. All copyrights retained by Wavetrak Limited and any attempt to modify or redistribute this code is prohibited. 
-      Please contact us for more information if required. -->
-      <div style="width:400px;background:#fff"><script type="text/javascript" src="{{ $camp->image_url_5 }}"></script><p><div style="font-family:Arial, Helvetica, sans-serif;text-align:center;font-size:10px;color:#000;height:25px;"><a href="{{ $camp->url_msw }}" style="color:#000;"></a></div></p></div>
-
-=======
         <div class="widget">
           <div class="embed-responsive embed-responsive-16by9">
-          <div classc="mapouter"><div class="gmap_canvas"><iframe width="400" height="300" id="gmap_canvas" src="{{ $camp->url }}" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div>
+          <div classc="mapouter"><div class="gmap_canvas"><iframe id="gmap_canvas" src="{{ $camp->url }}" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div>
           <br> 
         </div>
         <div class="embed-responsive embed-responsive-16by9">
@@ -76,10 +59,9 @@
           <!-- This code is issued by Magicseaweed.com under license 1553174474_96736 for the website  only subject to terms and conditions
       and this message being kept intact as part of the code. If you are not the license holder add this content to your website by registering at 
       Magicseaweed.com. All copyrights retained by Wavetrak Limited and any attempt to modify or redistribute this code is prohibited. 
-      Please contact us for more information if required. -->  
-    
-      @if ($camp->terms->count())
->>>>>>> 964245e1618f6adbdf1f88ee1132945abe21dbff
+      Please contact us for more information if required. -->
+
+
       <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
@@ -129,21 +111,16 @@
           </div>
         </div>
       </div>
-<<<<<<< HEAD
-      
-=======
-    @endif
 
       <br>
       <br>
 
->>>>>>> 964245e1618f6adbdf1f88ee1132945abe21dbff
       @if ($camp->reviews->count())
           <h5>Komentáře</h5>
 
           @foreach ($camp->reviews as $review)
               <h5>Od: {{$review->user->name}}</h5>
-              <p>Celkové hodnocení:{{$review->rating}}</p>
+              <h5>Celkové hodnocení:{{$review->rating}}</h5>
               <p>Komentář:{{$review->description}}</p>
 
               @can("admin")
