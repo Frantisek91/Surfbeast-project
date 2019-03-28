@@ -14,16 +14,18 @@ body {
     }
 
     .terms {
-        .list {
-            padding: 0.25rem;
-            font-size: 1rem;
-            margin-left: 2.5rem;
-        }
-
+            display: flex;
+            padding: 0.5rem;
+        .term {
+            display: flex;
+            > div {
+                width: 8rem;
+            }
         .btn {
             max-height: 2rem;
         }
     }
+}
 
     .panel-heading {
         background-color: darkgrey;

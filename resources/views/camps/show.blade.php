@@ -16,16 +16,18 @@
         <p class="row-6 col-md-7">{{ $camp->description }}</p>
     </div>
 
-      <h4>Dostupné termíny</h4>
-      <div class="terms">
-          <ul>
-              @foreach ($camp->terms as $term)
-                  <li class="d-flex my-2 list">Od: {{ $term->start }} Do: {{ $term->end }} Cena: {{ $term->price }} 
-                    <button type="button" class="btn btn-primary mx-2" data-toggle="modal" data-target=".bd-example-modal-lg">Zjistit obsazenost</button>
-                  </li>
-              @endforeach
-          </ul>
+    <h4>Dostupné termíny:</h4>
+    <br>
+      @foreach ($camp->terms as $term)
+      <div class="terms">  
+        <div class="term">
+          <div>Od: {{ $term->start }}</div>
+          <div>Do: {{ $term->end }}</div>
+          <div>Cena: {{ $term->price }}</div>
+        </div>
+        <button type="button" class="btn btn-primary mx-2" data-toggle="modal" data-target=".bd-example-modal-lg">Zjistit obsazenost</button>
       </div>
+      @endforeach
       
       <br>
 

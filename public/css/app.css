@@ -10778,13 +10778,20 @@ body .banner img {
   width: auto;
 }
 
-body .terms .list {
-  padding: 0.25rem;
-  font-size: 1rem;
-  margin-left: 2.5rem;
+body .terms {
+  display: flex;
+  padding: 0.5rem;
 }
 
-body .terms .btn {
+body .terms .term {
+  display: flex;
+}
+
+body .terms .term > div {
+  width: 8rem;
+}
+
+body .terms .term .btn {
   max-height: 2rem;
 }
 
