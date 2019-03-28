@@ -23,7 +23,7 @@
         <div class="term">
           <div>Od: {{ $term->start }}</div>
           <div>Do: {{ $term->end }}</div>
-          <div>Cena: {{ $term->price }}</div>
+          <div>Cena: {{ $term->price }} Kč</div>
         </div>
         <button type="button" class="btn btn-primary mx-2" data-toggle="modal" data-target=".bd-example-modal-lg">Zjistit obsazenost</button>
       </div>
