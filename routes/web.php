@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get("/", "SurfController@index");
 
  Route::group(['middleware' => ['can:admin']], function () {
 
