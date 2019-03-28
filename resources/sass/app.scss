@@ -32,17 +32,25 @@ footer {
   padding-bottom: 5rem;
   max-height: 10rem;
 
-  .row{
+   .row {
     display: flex;
     justify-content: center;
-    margin-left: 12rem;
   }
 
   .copyrights {
     text-align: center;
   }
-}
 
-footer a {
-  color:#fff;  
+  ul {
+    display: flex;
+    justify-content: center;
+
+    li {
+      padding: 1rem;
+    }
+  }
+
+  a {
+    color:#fff;  
+  }
 }

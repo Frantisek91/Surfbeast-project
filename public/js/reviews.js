@@ -104,7 +104,7 @@ eval("console.log('it works');//# sourceURL=[module]\n//# sourceMappingURL=data:
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\web\bootcamp\projects\Surfbeast-project\resources\js\reviews.js */"./resources/js/reviews.js");
+module.exports = __webpack_require__(/*! C:\web\bootcamp\projects\final_project\Surfbeast-project\resources\js\reviews.js */"./resources/js/reviews.js");
 
 
 /***/ })

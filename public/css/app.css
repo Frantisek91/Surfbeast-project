@@ -10880,11 +10880,19 @@ footer {
 footer .row {
   display: flex;
   justify-content: center;
-  margin-left: 12rem;
 }
 
 footer .copyrights {
   text-align: center;
+}
+
+footer ul {
+  display: flex;
+  justify-content: center;
+}
+
+footer ul li {
+  padding: 1rem;
 }
 
 footer a {

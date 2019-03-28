@@ -56,7 +56,7 @@
                 <img src="{{ asset('/images/Duvody_proc_2.jpg') }}" alt="Důvody proč surfovat">
             </div>
             <div class="text col-md-8">
-                Surfování je vynikající odbourávač stresu a napětí, proto se mnozí lidé s náročným zaměstnáním anebo přetažení povinnostmi často vydávají surfovat, aby si tak vyčistili mysl. Jen si představte, vy sami v oceánu, vlny a deska pod nohami. Osvěžení pro duši i tělo – slibujeme!
+                Surfování je vynikající odbourávač stresu a napětí, proto se mnozí lidé přetažení povinnostmi často vydávají surfovat, aby si tak vyčistili mysl. Jen si představte, vy sami v oceánu, vlny a deska pod nohami. Osvěžení pro duši i tělo – slibujeme!
             </div>
         </div>
 

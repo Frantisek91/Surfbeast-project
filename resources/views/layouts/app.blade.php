@@ -280,22 +280,14 @@
                     <h5 class="text-uppercase"></h5>
                     <ul class="list-unstyled">
                       <li><a href="#!">Všeobecné podmínky</a></li>
+                      <li><a href="#!">O nás</a></li>
                       <li><a href="#!">Kontakt</a></li>
                     </ul>
-                  </div>
-
-                  <div class="col-md-3 mb-md-0 mb-3">
-                    <h5 class="text-uppercase"></h5>
-        
-                    <ul class="list-unstyled">
-                      <li><a href="#!">Magazíny</a></li>
-                      <li><a href="#!">O nás</a></li>
-                    </ul>
-                  </div>
                 </div>
+              </div>
             </div>
-            <div class="copyrights footer-copyright text-center py-3">© 2019 Copyright:
-              <a href="#!"> kamzasurfovat.cz</a>
+            <div class="copyrights footer-copyright text-center py-3">2019 © Copyright:
+              <a href="#!"> kamzasurfem.cz</a>
             </div>
           </footer>
     </div>
