@@ -10663,6 +10663,10 @@ body {
   background-color: white;
 }
 
+h1 {
+  text-align: center;
+}
+
 .homepage .banner {
   background-image: url(/images/beach.jpg?bea7a66153f713c6e133fefd1c5bc679);
   min-width: 100vw;
@@ -10687,8 +10691,6 @@ body {
   text-align: center;
   padding: 20px;
   font-size: 1.5rem;
-  border-bottom: 0.5rem solid darkgrey;
-  margin-bottom: 5vh;
 }
 
 .homepage .floating {
