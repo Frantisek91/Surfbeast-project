@@ -76,12 +76,18 @@
                         <div class="row no-gutters">
                             <div class="col-md-4">
                                 <img src="{{ $camp->image_url_1 }}" class="card-img" alt="Surfcamp">
+                                @if(!empty($camp->average_review))
+                                    <p class="text-center my-2">Hodnocení:</p>
+                                    <label class="text-center bg-warning mx-5 p-2 rounded-circle">{{$camp->average_review}}</label>
+                                @else
+                                    <p class="text-center m-3">Bez hodnocení</p>
+                                @endif
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body">
                                     <h5 class="card-title">{{ $camp->name }}</h5>
                                     <a href="{{ action('AgencyController@show', $camp->agency_id) }}" target="_blank"><h5>{{ $camp->agency->name }}</h5></a>
-                                    <p class="card-text">Hodnocení: {{$camp->average_review}}</p>
+                                    
                                     <a href="{{ action('CampController@show', $camp->id) }}" target="_blank" class="btn btn-primary">Zobrazit detaily</a>
                                 
                                 </div>

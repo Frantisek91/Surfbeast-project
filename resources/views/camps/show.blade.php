@@ -116,11 +116,11 @@
       <br>
 
       @if ($camp->reviews->count())
-          <h5>Komentáře</h5>
+          <h5>Komentáře:</h5>
 
           @foreach ($camp->reviews as $review)
               <h5>Od: {{$review->user->name}}</h5>
-              <h5>Celkové hodnocení:{{$review->rating}}</h5>
+              <p>Hodnocení:{{$review->rating}}</p>
               <p>Komentář:{{$review->description}}</p>
 
               @can("admin")
