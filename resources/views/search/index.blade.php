@@ -47,7 +47,7 @@
                 <img src="{{ asset('/images/Duvody_proc_1.jpg') }}" alt="Důvody proč surfovat">
             </div>
             <div class="text col-md-8">
-                Surfování je vynikající aktivita, která Vám pomůže zlepšit celkové zdraví a dostat se do pohody. Proč? Vždycky je fajn, když je člověk venku, na čerstvém vzduchu a v objetí slunečních paprsků. Na surfu navíc procvičíte celé tělo. Pádlování rukama je perfektní kardiovaskulární cvičení, které posílí vaše paže a svaly celého trupu. A navíc, když už se na prkno konečně postavíte, tak si posílíte téměř všechny svaly dolní poloviny těla. A to je fajn.
+                Surfování vám pomůže zlepšit celkové zdraví a dostat se do pohody. Na surfu procvičíte celé tělo. Pádlování rukama je perfektní kardiovaskulární cvičení, které posílí paže a svaly celého trupu. Když už se na prkno konečně postavíte, tak si posílíte téměř všechny svaly dolní poloviny těla. A to je fajn.
             </div>
         </div>
 
@@ -56,7 +56,7 @@
                 <img src="{{ asset('/images/Duvody_proc_2.jpg') }}" alt="Důvody proč surfovat">
             </div>
             <div class="text col-md-8">
-                O surfovaní je známé, že je to vynikající odbourávač stresu a napětí, proto se mnozí lidé s náročným zaměstnáním anebo přetažení povinnostmi často vydávají surfovat, aby si tak vyčistili hlavu a mysl. Jen si představte, jak osvobozující to musí být: vy sami s větrem na otevřeném moři, vlny a jednoduchá deska pod nohami. Osvěžení pro duši i tělo – slibujeme!
+                Surfování je vynikající odbourávač stresu a napětí, proto se mnozí lidé s náročným zaměstnáním anebo přetažení povinnostmi často vydávají surfovat, aby si tak vyčistili mysl. Jen si představte, vy sami v oceánu, vlny a deska pod nohami. Osvěžení pro duši i tělo – slibujeme!
             </div>
         </div>
 
@@ -65,12 +65,12 @@
                 <img src="{{ asset('/images/Duvody_proc_3.jpg') }}" alt="Důvody proč surfovat">
             </div>
             <div class="text col-md-8">
-                V dnešní době se kdokoliv může věnovat běhu, procestovat na kole celou zemi, do práce jezdit na kolečkových bruslích nebo hrát o víkendu tenis – a je to normální. Při surfování ale máte zaručené, že zažijete neopakovatelné dobrodružství. Surf si stále drží punc výjimečnosti a jedinečných zážitků.
+                Kdokoliv se může věnovat běhu, jízdě na kole, do práce jezdit na kolečkových bruslích nebo hrát o víkendu tenis – a je to normální. Při surfování ale máte zaručené, že zažijete neopakovatelné dobrodružství. Surf si stále drží punc výjimečnosti a jedinečných zážitků.
             </div>
         </div>
 
 
-        <h1 class="my-5">3 nejlepší volby podle našich recenzí</h1>
+        <h1 class="my-5">Nejlepší volby podle hodnocení uživatelů</h1>
         <div class="row">
             @foreach($camps as $camp)
                 <div class="col-12 col-md-4">

@@ -29,7 +29,7 @@
       
       <br>
 
-      @php $counter = 0; @endphp
+      @php $counter = 1; @endphp
       @foreach ($pannels as $key => $value)
       <div class="panel-group" id="accordion">
         <div class="panel panel-default">

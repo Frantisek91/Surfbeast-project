@@ -10709,8 +10709,7 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  padding: 5rem;
+  padding: 2.5rem;
 }
 
 .homepage .cards {
@@ -10815,7 +10814,6 @@ body .panel-heading h4 a {
   .banner p {
     display: flex;
     align-items: center;
-    text-align: center;
     font-size: 1.2rem;
   }
 
@@ -10875,6 +10873,7 @@ h2 {
 footer {
   background-color: #263238;
   color: #fff;
+  margin-top: 2rem;
   padding-bottom: 5rem;
   max-height: 10rem;
 }
@@ -10882,6 +10881,7 @@ footer {
 footer .row {
   display: flex;
   justify-content: center;
+  margin-left: 12rem;
 }
 
 footer .copyrights {
