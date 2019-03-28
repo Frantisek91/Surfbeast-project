@@ -10693,6 +10693,10 @@ h1 {
   font-size: 1.5rem;
 }
 
+.homepage .slogan p {
+  margin-top: 4rem;
+}
+
 .homepage .floating {
   font-size: 1.3rem;
 }
