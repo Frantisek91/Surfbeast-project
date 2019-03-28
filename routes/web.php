@@ -17,7 +17,8 @@ Route::get('/', function () {
 
  Route::group(['middleware' => ['can:admin']], function () {
 
-    Route::resource('/destinations', 'DestinationController')->except(['index', 'show']);
+    Route::resource('/destinations', 'DestinationController');
+    Route::get("destinations", "DestinationController@index")->name("destinations");
 
     Route::get('/camp/{id}/term/create', 'TermsController@create');
     Route::post('/camp/{id}/term/store', 'TermsController@store');
@@ -41,6 +42,9 @@ Route::get('/', function () {
     Route::delete('/agency/{id}', 'AgencyController@destroy');
 
     Route::delete("/camp/show/{camp}", "ReviewsController@destroy");
+
+    Route::get("/inquiries", "InquiryController@index")->name("inquiries");
+    Route::get("/inquiry/show/{id}", "InquiryController@show");
     
 
 });

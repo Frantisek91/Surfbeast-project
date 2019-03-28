@@ -15,8 +15,10 @@ class InquiryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //
+    {        
+        $inquiries = Inquiry::orderBy("created_at", "asc")->get();
+
+        return view ("inquiries.index", compact("inquiries"));
     }
 
     /**
@@ -60,7 +62,11 @@ class InquiryController extends Controller
      */
     public function show($id)
     {
-        //
+        $inquiry = Inquiry::findOrFail($id);
+        $term = Term::where("id", $inquiry->term_id);
+        $camp = Term::where("id", $term->camp_id);
+
+        return view ("inquiries.show", compact("inquiries", "camps", "terms"));
     }
 
     /**

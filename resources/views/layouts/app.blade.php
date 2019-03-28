@@ -55,6 +55,10 @@
                             <li class="nav-item">
                                 <a class="nav-link" href={{route("camps")}}>Kempy</a>
                             </li>
+
+                            <li class="nav-item">
+                                    <a class="nav-link" href={{route("inquiries")}}>Poptávky</a>
+                                </li>
                             @endcan
                         <!-- Authentication Links -->
                         @guest
