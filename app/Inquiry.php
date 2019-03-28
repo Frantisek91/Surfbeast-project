@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Inquiry extends Model
 {
-    public function camp()
+
+    public function term()
     {
         return $this->belongsTo("\App\Term");
     }

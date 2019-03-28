@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Inquiry;
 use App\Camp;
 use App\Term;
+use App\Mail\InquiryCreated;
 
 class InquiryController extends Controller
 {
@@ -15,8 +16,17 @@ class InquiryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //
+    {        
+        $inquiries = Inquiry::orderBy("created_at", "asc")->get();
+
+        return view ("inquiries.index", compact("inquiries"));
+    }
+
+    public function resolved()
+    {        
+        $inquiries = Inquiry::orderBy("updated_at", "desc")->where("resolved", true)->get();
+
+        return view ("inquiries.resolved", compact("inquiries"));
     }
 
     /**
@@ -48,6 +58,11 @@ class InquiryController extends Controller
         $inquiry->message = $request->message;
         
         $inquiry->save();
+
+        \Mail::to($inquiry->email)->send(
+            new InquiryCreated($inquiry)
+        );
+
         session()->flash('success_message', 'Poptávka zaslána');
         return redirect()->back();
     }
@@ -60,7 +75,12 @@ class InquiryController extends Controller
      */
     public function show($id)
     {
-        //
+        $inquiry = Inquiry::findOrFail($id);
+       // dd($term);
+        //$camp = Camp::where("id", $term->camp_id)->get();
+        
+
+        return view ("inquiries.show", compact("inquiry"));
     }
 
     /**
@@ -71,7 +91,9 @@ class InquiryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $inquiry = Inquiry::findOrFail($id);
+
+        return view('inquiries.edit', compact('inquiry'));
     }
 
     /**
@@ -83,7 +105,16 @@ class InquiryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $inquiry = Inquiry::findOrFail($id);
+
+        $inquiry->resolved = $request->resolved;
+        $inquiry->comment = $request->comment;
+        
+
+        $inquiry->save();
+
+        session()->flash('success_message', 'Zpracováno');
+        return redirect(action("InquiryController@resolved"));
     }
 
     /**
@@ -94,6 +125,9 @@ class InquiryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $inquiry = Inquiry::findOrFail($id);  
+        $inquiry->delete();
+        session()->flash('delete_message', 'Smazáno');
+        return redirect()->back();
     }
 }

@@ -49,7 +49,7 @@
             </div>
         </div>
 
-        <div class="floating row">
+        <div class="floating row middle">
             <div class="picture-fluid picture col-md-4">
                 <img src="{{ asset('/img/surf2.jpg') }}" alt="">
             </div>
@@ -68,22 +68,28 @@
         </div>
 
 
-    <h1>3 nejlepsi volby podle nasich recenzi</h1>
-
-    <div class="row container cards">
-        @foreach($camps as $camp)
-        <div class="col-md-4">
-            <div class="card text-center">
-            <div class="card-body">
-                <h5 class="card-title">{{$camp->name}}</h5>
-                <p class="card-text">{{$camp->average_review}}</p>
-                <a href="{{ action("CampController@show", $camp->id) }}" class="btn btn-primary">Zjistit více</a>
-            </div>
-            </div>
-        </div>
+        <h1 class="my-5">3 nejlepsi volby podle nasich recenzi</h1>
+        <div class="row">
+            @foreach($camps as $camp)
+                <div class="col-12 col-md-4">
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row no-gutters">
+                            <div class="col-md-4">
+                                <img src="{{ $camp->image_url_1 }}" class="card-img" alt="Surfcamp">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ $camp->name }}</h5>
+                                    <a href="{{ action('AgencyController@show', $camp->agency_id) }}" target="_blank"><h5>{{ $camp->agency->name }}</h5></a>
+                                    <p class="card-text">Hodnocení: {{$camp->average_review}}</p>
+                                    <a href="{{ action('CampController@show', $camp->id) }}" target="_blank" class="btn btn-primary">Zobrazit detaily</a>
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             @endforeach
+        </div>
     </div>
-
-</div>
-
 @endsection

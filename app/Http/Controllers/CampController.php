@@ -98,7 +98,20 @@ class CampController extends Controller
     {
         $camp = Camp::findOrFail($id);
 
-        return view('camps/show', compact('camp'));
+        $pannels = [
+           'accommodation' =>  'Ubytování',
+           'catering' => 'Stravování',
+           'transport' => 'Doprava',
+           'insurance' => 'Pojištění',
+           'transfer' => 'Transfer',
+           'schedule' => 'Program',
+           'surf_lessons' => 'Lekce',
+           'equipment' => 'Vybaveni',
+           'skill_level' => 'Úroveň',
+           'instructors' => 'Instruktoři',
+        ];
+
+        return view('camps/show', compact('camp', 'pannels'));
     }
 
     /**
@@ -110,6 +123,8 @@ class CampController extends Controller
     public function edit($id)
     {
         $camp = Camp::findOrFail($id);
+        $agencies = Agency::orderBy("name", "asc")->get();
+        $destinations = Destination::orderBy("name", "asc")->get();
 
         return view('camps/edit', compact('camp', 'agencies', 'destinations'));
     }

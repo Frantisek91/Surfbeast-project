@@ -17,8 +17,9 @@ class SurfController extends Controller
     public function index()
     {
         $destinations = \App\Destination::all();
+        
         $camps = Camp::select(['*', 
-            DB::raw('(select AVG(`rating`) from `reviews` where `reviews`.`camp_id` = `camps`.`id`) as average_review')
+            DB::raw('(select ROUND(AVG(`rating`), 1) from `reviews` where `reviews`.`camp_id` = `camps`.`id`) as average_review')
         ])
         ->with('reviews')    
         ->orderByRaw('average_review DESC')
