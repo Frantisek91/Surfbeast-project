@@ -10869,6 +10869,17 @@ h2 {
 footer {
   background-color: #263238;
   color: #fff;
+  padding-bottom: 5rem;
+  max-height: 10rem;
+}
+
+footer .row {
+  display: flex;
+  justify-content: center;
+}
+
+footer .copyrights {
+  text-align: center;
 }
 
 footer a {
