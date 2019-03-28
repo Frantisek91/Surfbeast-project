@@ -21,26 +21,27 @@
             <div id="collapse{{$inquiry->id}}" class="collapse hide" aria-labelledby="heading{{$inquiry->id}}}" data-parent="#accordionExample">
                 <div class="card-body">
                     <div class="container">
+                                                
+                        <p>Destinace: {{ $inquiry->term->camp->destination->name }}</p>
+                        <p>Agentura: {{$inquiry->term->camp->agency->name}}</p>
+                        <p>Kemp: {{ $inquiry->term->camp->name }}</p>
+                        <p>Od: {{ $inquiry->term->start }} Do:{{$inquiry->term->end}}</p>
+                        <p>Cena: {{ $inquiry->term->price }}Kč</p>   
+
+                    <div class="d-flex">
+                            <a href="{{action("InquiryController@edit", $inquiry->id)}}" class="btn btn-success mx-1">Zpracovat</a>
+                                                        
+                            <form method="POST" action="{{action("InquiryController@destroy", $inquiry->id)}}">
+                                @method("DELETE")
+                                @csrf
+                                <div>
+                                    <button type="submit" class="btn btn-danger mx-1">Smazat</button>
+                                </div>
+                            </form>
                         
-                        <p>{{ $inquiry->message }}</p>
-                        <a href="{{ action("InquiryController@show", $inquiry->id) }}" class="btn btn-primary">Náhled</a>
-                        
-                    </div>
-                   
+                        </div>          
+                    </div>               
                     
-                   {{--  <div class="d-flex">
-                        @can("admin")
-                        <a href="{{action("DestinationController@edit", $destination->id)}}" class = "btn btn-success">Upravit</a>
-                        <a href="{{ action("DestinationController@show", $destination->id) }}" class="btn btn-primary">Náhled</a>
-                        <form method="POST" action="{{action("DestinationController@destroy", $destination->id)}}">
-                            @method("DELETE")
-                            @csrf
-                            <div>
-                                <button type="submit" class="btn btn-danger">Smazat</button>
-                            </div>
-                        </form>
-                        @endcan
-                    </div> --}}                
                 </div>            
             </div>    
         </div>  

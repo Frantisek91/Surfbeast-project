@@ -3,7 +3,12 @@
 @section('content')
 <div class="container">
 
+    <p>{{$inquiry->term->camp->name}}</p>
     <p>{{$inquiry->message}}</p>
+    
+    <p>{{$inquiry->term->price}}</p>
+
+    
 
     {{-- @can("admin")
 

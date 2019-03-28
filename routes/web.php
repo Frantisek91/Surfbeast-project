@@ -24,7 +24,7 @@ Route::get('/', function () {
     Route::post('/camp/{id}/term/store', 'TermsController@store');
     Route::get('/term/{id}/edit', 'TermsController@edit');
     Route::put('/term/{id}/edit', 'TermsController@update');
-    Route::delete('/term/{id}/edit', 'TermsController@destroy');
+    Route::delete('/term/{id}', 'TermsController@destroy');
 
     Route::get("/camps/all", 'CampController@all')->name("camps");
     Route::post("/camp", 'CampController@store');
@@ -34,7 +34,6 @@ Route::get('/', function () {
     Route::delete('/camp/{id}', 'CampController@destroy');
 
     Route::get('/agencies', 'AgencyController@index')->name("agencies");
-    Route::get('/agency/show/{id}', 'AgencyController@show');
     Route::get('/agency/create', 'AgencyController@create');
     Route::post('/agency', 'AgencyController@store');
     Route::get('/agency/{id}/edit', 'AgencyController@edit');
@@ -44,7 +43,11 @@ Route::get('/', function () {
     Route::delete("/camp/show/{camp}", "ReviewsController@destroy");
 
     Route::get("/inquiries", "InquiryController@index")->name("inquiries");
-    Route::get("/inquiry/show/{id}", "InquiryController@show");
+    Route::get('/inquiry/{id}/edit', 'InquiryController@edit');
+    //Route::get("/inquiry/show/{id}", "InquiryController@show");
+    Route::put('/inquiry/{id}/edit', 'InquiryController@update');
+    Route::delete('/inquiry/{id}', 'InquiryController@destroy');
+    Route::get('/inquiry/resolved', 'InquiryController@resolved')->name("resolved");
     
 
 });
@@ -62,7 +65,7 @@ Route::get('/camp/{id}/edit', 'CampController@edit');
 Route::put('/camp/{id}/edit', 'CampController@update'); */
 
 
-
+Route::get('/agency/show/{id}', 'AgencyController@show');
 /* Route::get('/agency/create', 'AgencyController@create');
 Route::post('/agency', 'AgencyController@store');
 Route::get('/agency/show/{id}', 'AgencyController@show');

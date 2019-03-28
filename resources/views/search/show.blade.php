@@ -65,32 +65,30 @@
 
 
             <div class="card mb-3" style="max-width: 540px;">
-                <div class="row no-gutters">
-                  <div class="col-md-4">
+              <div class="row no-gutters">
+                <div class="col-md-4">
                   <img src="{{ $camp->image_url_1 }}" class="card-img" alt="Surfcamp">
-                  </div>
-                  <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ $camp->name }}</h5>
-
-                <a href="{{ action('AgencyController@show', $camp->agency_id) }}" target="_blank"><h5>{{ $camp->agency->name }}</h5></a>
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">{{ $camp->name }}</h5>
+                    <a href="{{ action('AgencyController@show', $camp->agency_id) }}" target="_blank"><h5>{{ $camp->agency->name }}</h5></a>
                         {{-- @foreach ($camp->terms as $term)
                           <div>Od: {{ $term->start }} Do: {{ $term->end }}</div>    
                           <br>
                           <div>Cena: {{ $term->price }}</div>
                         @endforeach
                         <br> --}}
-                <a href="{{ action('CampController@show', $camp->id) }}" target="_blank" class="btn btn-primary">Zobrazit detaily</a>
-                <br>
-                <br>
-
+                    <a href="{{ action('CampController@show', $camp->id) }}" target="_blank" class="btn btn-primary">Zobrazit detaily</a>
+                      <br>
+                      <br>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
 
             @endif
-          </div>
+        </div>
 
         @endforeach
     </div>

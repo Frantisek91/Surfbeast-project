@@ -63,7 +63,7 @@ class ReviewsController extends Controller
     {   
         $review = Review::findOrFail($id);  
         $review->delete();
-        session()->flash('delete_message', 'Komentář smazán');
+        session()->flash('delete_message', 'Smazáno');
         return redirect()->back();
       }
 }

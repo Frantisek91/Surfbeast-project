@@ -16,7 +16,7 @@
                 <div class="card-header" id="heading{{$camp->id}}}">
                     <h2 class="mb-0">
                     <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{{$camp->id}}" aria-expanded="true" aria-controls="collapse{{$camp->id}}">
-                        {{ $camp->name }}
+                        <p>{{$camp->agency->name}}: {{ $camp->name }} </p>   
                     </button>
                     </h2>
                 </div>
@@ -40,8 +40,9 @@
                         </form>
                         <a href="{{ action("TermsController@create", $camp->id) }}" class="btn btn-warning mx-1">Přidat termín</a>
                         @endcan
-                    </div>        
-                    
+                    </div>              
+
+                @if ($camp->terms->count())
                     <h5>Dostupné termíny:</h5>
                     <div class="terms">
                         <ul>
@@ -57,7 +58,12 @@
                                 </li>
                             @endforeach
                         </ul>
-                    </div>                                
+                    </div>  
+                @else 
+                    <h5>Žadné termíny</h5>
+                @endif    
+                    
+
                 </div>            
             </div>    
         </div>  

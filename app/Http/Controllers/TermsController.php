@@ -108,7 +108,7 @@ class TermsController extends Controller
     {
         $Term = Term::findOrFail($id);  
         $Term->delete();
-        session()->flash('delete_message', 'Termín smazán');
+        session()->flash('delete_message', 'Smazáno');
         return redirect()->back();
     }
 }

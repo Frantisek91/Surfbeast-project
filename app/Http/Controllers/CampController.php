@@ -110,6 +110,8 @@ class CampController extends Controller
     public function edit($id)
     {
         $camp = Camp::findOrFail($id);
+        $agencies = Agency::orderBy("name", "asc")->get();
+        $destinations = Destination::orderBy("name", "asc")->get();
 
         return view('camps/edit', compact('camp', 'agencies', 'destinations'));
     }

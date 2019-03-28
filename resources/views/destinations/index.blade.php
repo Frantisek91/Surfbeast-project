@@ -28,13 +28,13 @@
                     
                     <div class="d-flex">
                         @can("admin")
-                        <a href="{{action("DestinationController@edit", $destination->id)}}" class = "btn btn-success">Upravit</a>
-                        <a href="{{ action("DestinationController@show", $destination->id) }}" class="btn btn-primary">Náhled</a>
+                        <a href="{{action("DestinationController@edit", $destination->id)}}" class="btn btn-success mx-1">Upravit</a>
+                        <a href="{{ action("DestinationController@show", $destination->id) }}" class="btn btn-primary mx-1">Náhled</a>
                         <form method="POST" action="{{action("DestinationController@destroy", $destination->id)}}">
                             @method("DELETE")
                             @csrf
                             <div>
-                                <button type="submit" class="btn btn-danger">Smazat</button>
+                                <button type="submit" class="btn btn-danger mx-1">Smazat</button>
                             </div>
                         </form>
                         @endcan

@@ -16,6 +16,8 @@
         <p class="row-6">{{ $camp->description }}</p>
     </div>
 
+
+    @if ($camp->terms->count())
       <h5>Dostupné termíny</h5>
       <div class="terms">
           <ul>
@@ -26,6 +28,10 @@
               @endforeach
           </ul>
       </div>
+    @else 
+      <h5>Momentálně nenabízíme žádné termíny.</h5>
+    @endif    
+
       
       <br>
 
@@ -80,7 +86,9 @@
       Magicseaweed.com. All copyrights retained by Wavetrak Limited and any attempt to modify or redistribute this code is prohibited. 
       Please contact us for more information if required. -->
       <div style="width:400px;background:#fff"><script type="text/javascript" src="{{ $camp->image_url_5 }}"></script><p><div style="font-family:Arial, Helvetica, sans-serif;text-align:center;font-size:10px;color:#000;height:25px;"><a href="{{ $camp->url_msw }}" style="color:#000;"></a></div></p></div> --}}
-
+    
+    
+      @if ($camp->terms->count())
       <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
@@ -130,6 +138,7 @@
           </div>
         </div>
       </div>
+    @endif
 
       <br>
       <br>
@@ -139,7 +148,7 @@
 
           @foreach ($camp->reviews as $review)
               <h5>Od: {{$review->user->name}}</h5>
-              <h5>Celkové hodnocení:{{$review->rating}}</h5>
+              <p>Celkové hodnocení:{{$review->rating}}</p>
               <p>Komentář:{{$review->description}}</p>
 
               @can("admin")
