@@ -57,7 +57,10 @@ class SurfController extends Controller
         $sortArray = explode('-', $sort);
 
         $camps = \App\Camp::
-            where('destination_id', $request->destination_id)
+            select(['*', 
+                DB::raw('(select ROUND(AVG(`rating`), 1) from `reviews` where `reviews`.`camp_id` = `camps`.`id`) as average_review')
+            ])
+            ->where('destination_id', $request->destination_id)
             ->whereHas('terms', function ($query) use ($price_min, $price_max, $start, $end) {
                 $query 
                 ->where('start', '>=', $start)
@@ -73,7 +76,14 @@ class SurfController extends Controller
                     ->where('price', '<=', $price_max)
                     ->orderBy($sortArray[0], $sortArray[1]);
             }])->get();
+            /* 
+        $camp_rev = Camp::select(['*', 
+            DB::raw('(select ROUND(AVG(`rating`), 1) from `reviews` where `reviews`.`camp_id` = `camps`.`id`) as average_review')
+        ])
+        ->with('reviews')    
+        ->orderByRaw('average_review DESC')
+        ->get(); */
 
-        return view('search.show', compact('camps', 'destination', 'destinations', 'price_min', 'price_max', 'start', 'end', 'sort'));
+        return view('search.show', compact('camps','destination', 'destinations', 'price_min', 'price_max', 'start', 'end', 'sort'));
     }
 }
