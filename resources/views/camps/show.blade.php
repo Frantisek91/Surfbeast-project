@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">    
   <div class="container results">
-
+    <br>
       <h2>{{ $camp->name }}</h2>
 
       @include('alerts')
@@ -12,7 +12,7 @@
       <br>
 
     <div class="banner row">
-        <img src="{{ asset('/img/surf2.jpg') }}" alt="" class="col col-md-5 picture-fluid">
+        <img src="{{ $camp->image_url_2 }}" alt="" class="col col-md-5 picture-fluid">
         <p class="row-6 col-md-7">{{ $camp->description }}</p>
     </div>
 
@@ -29,7 +29,7 @@
       
       <br>
 
-      @php $counter = 1; @endphp
+      @php $counter = 0; @endphp
       @foreach ($pannels as $key => $value)
       <div class="panel-group" id="accordion">
         <div class="panel panel-default">

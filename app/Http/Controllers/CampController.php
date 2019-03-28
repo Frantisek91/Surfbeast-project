@@ -99,14 +99,14 @@ class CampController extends Controller
         $camp = Camp::findOrFail($id);
 
         $pannels = [
-           'accommodation' =>  'Ubytování',
+           'accommodation' => 'Ubytování',
            'catering' => 'Stravování',
            'transport' => 'Doprava',
            'insurance' => 'Pojištění',
            'transfer' => 'Transfer',
            'schedule' => 'Program',
            'surf_lessons' => 'Lekce',
-           'equipment' => 'Vybaveni',
+           'equipment' => 'Vybavení',
            'skill_level' => 'Úroveň',
            'instructors' => 'Instruktoři',
         ];
