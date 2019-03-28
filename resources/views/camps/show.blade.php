@@ -29,17 +29,18 @@
       
       <br>
 
+      @php $counter = 0; @endphp
       @foreach ($pannels as $key => $value)
       <div class="panel-group" id="accordion">
         <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{ $counter }}">
                 {{ $value }}</a>
             </h4>
           </div>
-          <div id="collapse1" class="panel-collapse collapse in">
-            <div class="panel-body">{{ $camp->$key }}</div>
+          <div id="collapse{{ $counter++ }}" class="panel-collapse collapse in">
+            <div class="panel-body container">{{ $camp->$key }}</div>
           </div>
         </div>
       @endforeach

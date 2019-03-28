@@ -9,6 +9,8 @@
 
     <title>{{ config('app.name', 'kamzasurfem') }}</title>
 
+    <link rel="shortcut icon" href="{{{ asset('images/van.ico') }}}">
+
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
@@ -256,7 +258,7 @@
         </div>
 
 
-        <main>
+        <main class="content">
                 {{-- class="py-4" --}}
           
                 
@@ -269,34 +271,30 @@
         <footer class="page-footer font-small pt-4">
             <div class="container-fluid text-center text-md-left">
               <div class="row">
-                <div class="col-md-6 mt-md-0 mt-3">
+                {{-- <div class="col-md-6 mt-md-0 mt-3">
                   <h5 class="text-uppercase">Footer Content</h5>
                   <p>Here you can use rows and columns here to organize your footer content.</p>
-                </div>
+                </div> --}}
                 <hr class="clearfix w-100 d-md-none pb-3">
-                <div class="col-md-3 mb-md-0 mb-3">
-                    <h5 class="text-uppercase">Links</h5>
+                <div class="col-md-3 mb-md-0 mb-3 lists">
+                    <h5 class="text-uppercase"></h5>
                     <ul class="list-unstyled">
-                      <li><a href="#!">Vseobecne podminky</a></li>
-                      <li><a href="#!">Copyright</a></li>
-                      <li><a href="#!"></a></li>
-                      <li><a href="#!">Tutorials</a></li>
+                      <li><a href="#!">Všeobecné podmínky</a></li>
+                      <li><a href="#!">Kontakt</a></li>
                     </ul>
                   </div>
 
                   <div class="col-md-3 mb-md-0 mb-3">
-                    <h5 class="text-uppercase">Links</h5>
+                    <h5 class="text-uppercase"></h5>
         
                     <ul class="list-unstyled">
-                      <li><a href="#!">Magazines</a></li>
-                      <li><a href="#!">Recommended surfboards</a></li>
-                      <li><a href="#!">About us</a></li>
-                      <li><a href="#!">Contact us</a></li>
+                      <li><a href="#!">Magazíny</a></li>
+                      <li><a href="#!">O nás</a></li>
                     </ul>
                   </div>
                 </div>
             </div>
-            <div class="footer-copyright text-center py-3">© 2019 Copyright:
+            <div class="copyrights footer-copyright text-center py-3">© 2019 Copyright:
               <a href="#!"> kamzasurfovat.cz</a>
             </div>
           </footer>

@@ -22,13 +22,25 @@
 
 .content {
   min-height: 100vh;
-  font-family: 'Poppins', sans-serif;
+  font-family: $font-family-headings;
 }
 
 footer {
   background-color:#263238;
   color:#fff;
+  padding-bottom: 5rem;
+  max-height: 10rem;
+
+  .row{
+    display: flex;
+    justify-content: center;
+  }
+
+  .copyrights {
+    text-align: center;
+  }
 }
+
 footer a {
   color:#fff;  
 }
