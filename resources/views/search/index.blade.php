@@ -49,7 +49,7 @@
             </div>
         </div>
 
-        <div class="floating row">
+        <div class="floating row middle">
             <div class="picture-fluid picture col-md-4">
                 <img src="{{ asset('/img/surf2.jpg') }}" alt="">
             </div>

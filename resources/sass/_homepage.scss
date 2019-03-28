@@ -74,7 +74,7 @@ body {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                width: 75vw;
+                width: 80vw;
                 margin: 0 auto;
                 padding: 15px;
 
@@ -99,12 +99,13 @@ body {
 
         .middle {
             display: flex;
-            flex-direction: column-reverse;
+            flex-direction: row-reverse;
         }
 
         .cards {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
+            padding-bottom: 2rem;
         }
     }
 }

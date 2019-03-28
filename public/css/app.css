@@ -10724,7 +10724,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 75vw;
+    width: 80vw;
     margin: 0 auto;
     padding: 15px;
   }
@@ -10751,12 +10751,71 @@ body {
 
   .homepage .middle {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: row-reverse;
   }
 
   .homepage .cards {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    padding-bottom: 2rem;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: white;
+}
+
+body .banner img {
+  height: 20rem;
+  width: auto;
+}
+
+body .terms .list {
+  padding: 0.25rem;
+  font-size: 1rem;
+  margin-left: 2.5rem;
+}
+
+body .terms .btn {
+  max-height: 2rem;
+}
+
+body .panel-heading {
+  background-color: darkgrey;
+  text-align: center;
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 5%;
+}
+
+body .panel-heading h4 a {
+  text-decoration: none;
+  color: white;
+}
+
+@media all and (min-width: 800px) {
+  .banner {
+    padding-bottom: 2rem;
+  }
+
+  .banner img {
+    max-height: 20rem;
+  }
+
+  .banner p {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+
+  .widget {
+    display: flex;
+    justify-content: space-around;
   }
 }
 
@@ -10804,6 +10863,7 @@ h2 {
 
 .content {
   min-height: 100vh;
+  font-family: "Poppins", sans-serif;
 }
 
 footer {
