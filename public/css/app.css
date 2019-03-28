@@ -10669,7 +10669,6 @@ h1 {
 
 .homepage .banner {
   background-image: url(/images/beach.jpg?bea7a66153f713c6e133fefd1c5bc679);
-  min-width: 100vw;
   min-height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
