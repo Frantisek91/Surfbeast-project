@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', '#kamzasurfovat') }}</title>
+    <title>{{ config('app.name', 'kamzasurfem') }}</title>
 
     <link rel="shortcut icon" href="{{{ asset('images/van.ico') }}}">
 
