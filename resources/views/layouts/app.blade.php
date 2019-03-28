@@ -266,10 +266,10 @@
                 <div class="col-md-3 mb-md-0 mb-3">
                     <h5 class="text-uppercase">Links</h5>
                     <ul class="list-unstyled">
-                      <li><a href="#!">Raz</a></li>
-                      <li><a href="#!">Dva</a></li>
-                      <li><a href="#!">Tri</a></li>
-                      <li><a href="#!">Ctyri</a></li>
+                      <li><a href="#!">Vseobecne podminky</a></li>
+                      <li><a href="#!">Copyright</a></li>
+                      <li><a href="#!"></a></li>
+                      <li><a href="#!">Tutorials</a></li>
                     </ul>
                   </div>
 
@@ -277,10 +277,10 @@
                     <h5 class="text-uppercase">Links</h5>
         
                     <ul class="list-unstyled">
-                      <li><a href="#!">Pet</a></li>
-                      <li><a href="#!">Sest</a></li>
-                      <li><a href="#!">Sedm</a></li>
-                      <li><a href="#!">Osm</a></li>
+                      <li><a href="#!">Magazines</a></li>
+                      <li><a href="#!">Recommended surfboards</a></li>
+                      <li><a href="#!">About us</a></li>
+                      <li><a href="#!">Contact us</a></li>
                     </ul>
                   </div>
                 </div>
@@ -290,5 +290,6 @@
             </div>
           </footer>
     </div>
+    <script src="{{asset('js/reviews.js')}}"></script>
 </body>
 </html>
