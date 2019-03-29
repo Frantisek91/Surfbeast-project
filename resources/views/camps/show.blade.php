@@ -145,7 +145,7 @@
           @csrf
 
           <div class="form-group">
-            <label>Celkové hodnocení:</label>
+            <label>Celkové hodnocení ( 5 = nejlepší, 1 = nejhorší):</label>
             <select class="form-control" name="rating">
               <option>1</option>
               <option>2</option>
