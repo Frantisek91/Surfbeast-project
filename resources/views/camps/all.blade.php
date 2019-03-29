@@ -25,9 +25,8 @@
             <div id="collapse{{$camp->id}}" class="collapse hide" aria-labelledby="heading{{$camp->id}}}" data-parent="#accordionExample">
                 <div class="card-body">
                     <p>{{ $camp->description }}</p>
-
-                    <div class="d-flex my-3">
-                        @can("admin")
+                    <div class="container">
+                    <div class="d-flex mt-1 mb-4">                        
                         <a href="{{action("CampController@edit", $camp->id)}}" class = "btn btn-success mx-1">Upravit</a>
                         <a href="{{ action("CampController@show", $camp->id) }}" class="btn btn-primary mx-1">Náhled</a>
 
@@ -38,26 +37,27 @@
                                 <button type="submit" class="btn btn-danger mx-1">Smazat</button>
                             </div>
                         </form>
-                        <a href="{{ action("TermsController@create", $camp->id) }}" class="btn btn-warning mx-1">Přidat termín</a>
-                        @endcan
+                        <a href="{{ action("TermsController@create", $camp->id) }}" class="btn btn-warning mx-1">Přidat termín</a>                        
+                    </div>
                     </div>              
 
                 @if ($camp->terms->count())
                     <h5>Dostupné termíny:</h5>
                     <div class="terms">
-                        <ul>
+                        <div class="container">
                             @foreach ($camp->terms as $term)
-                                <li class="d-flex my-2">Od: {{ $term->start->format("j.n.Y") }} Do: {{ $term->end->format("j.n.Y") }} Cena: {{ $term->price }}
-                                <a href="{{action("TermsController@edit", $term->id)}}" class = "btn btn-success mx-1">Upravit</a>
-                                    <form method="POST" action="{{action("TermsController@destroy", $term->id) }}">
-                                    @method("DELETE")
-                                    @csrf
-                                    <button type="submit" class="btn btn-danger mx-1">Smazat</button>
-                                    </form>                   
-                                    
-                                </li>
+                                <p class="d-flex my-2">Od: {{ $term->start->format("j.n.Y") }} Do: {{ $term->end->format("j.n.Y") }} Cena: {{ $term->price }} </p>
+                                    <div class="d-flex">
+                                        <a href="{{action("TermsController@edit", $term->id)}}" class = "btn btn-success mx-1">Upravit</a>
+                                        <form method="POST" action="{{action("TermsController@destroy", $term->id) }}">
+                                        @method("DELETE")
+                                        @csrf
+                                        <button type="submit" class="btn btn-danger mx-1">Smazat</button>
+                                        </form>
+                                    </div>                                                  
+                                
                             @endforeach
-                        </ul>
+                        </div>
                     </div>  
                 @else 
                     <h5>Žadné termíny</h5>

@@ -119,19 +119,20 @@
       <br>
 
       @if ($camp->reviews->count())
-          <h5>Komentáře:</h5>
+          <h4>Komentáře:</h4>
 
           @foreach ($camp->reviews as $review)
-              <h5>Od: {{$review->user->name}}</h5>
-              <p>Hodnocení:{{$review->rating}}</p>
-              <p>Komentář:{{$review->description}}</p>
+              <p> <b>Od:</b> {{$review->user->name}}</p>
+              <p><b>Hodnocení: </b>{{$review->rating}}</p>
+              <p><b>Komentář: </b></p>
+              <p>{{$review->description}}</p>
 
               @can("admin")
 
               <form method="POST" action="{{action("ReviewsController@destroy", $review->id) }}">
                 @method("DELETE")
                 @csrf
-                <button type="submit" class="btn btn-danger">Smazat</button>
+                <button type="submit" class="btn btn-danger mb-3">Smazat</button>
               </form>
 
               @endcan 
