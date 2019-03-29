@@ -33,3 +33,9 @@ h2 {
     background-image: url(../img/destinations_france_1.jpg);
     background-position: 50% 70%;
 }
+
+@media all and (max-width: 500px) {
+    .destination {
+        height: 600px;
+    }
+}
