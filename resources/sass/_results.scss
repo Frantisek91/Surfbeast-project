@@ -77,3 +77,9 @@ body {
         flex-direction: column;
     }
 }
+
+@media all and (max-width: 400px) {
+    .term {
+        flex-direction: column;
+    }
+}
