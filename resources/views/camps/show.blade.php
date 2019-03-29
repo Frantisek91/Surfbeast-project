@@ -21,8 +21,8 @@
       @foreach ($camp->terms as $term)
       <div class="terms">  
         <div class="term">
-          <div>Od: {{ $term->start->format("d.m.Y") }}</div>
-          <div>Do: {{ $term->end->format("d.m.Y") }}</div>
+          <div>Od: {{ $term->start->format("j.n.Y") }}</div>
+          <div>Do: {{ $term->end->format("j.n.Y") }}</div>
           <div>Cena: {{ $term->price }} Kč</div>
         </div>
         <button type="button" class="btn btn-primary mx-2" data-toggle="modal" data-target=".bd-example-modal-lg">Zjistit obsazenost</button>

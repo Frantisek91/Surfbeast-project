@@ -24,7 +24,7 @@
         </div>        
             <p>Zpráva: {{ $inquiry->message }}</p>
             <p>Kemp:{{ $inquiry->term->camp->name }}</p>
-            <p>Od: {{ $inquiry->term->start }} Do: {{$inquiry->term->end}} </p>
+            <p>Od: {{ $inquiry->term->start->format("j.n.Y") }} Do: {{$inquiry->term->end->format("j.n.Y")}} </p>
             <p>Destinace:{{ $inquiry->term->camp->destination->name }}</p>
             <p>Agentura: {{$inquiry->term->camp->agency->name}}</p>
             <p>Cena: {{ $inquiry->term->price }}</p>

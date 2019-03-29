@@ -47,7 +47,7 @@
                     <div class="terms">
                         <ul>
                             @foreach ($camp->terms as $term)
-                                <li class="d-flex my-2">Od: {{ $term->start }} Do: {{ $term->end }} Cena: {{ $term->price }}
+                                <li class="d-flex my-2">Od: {{ $term->start->format("j.n.Y") }} Do: {{ $term->end->format("j.n.Y") }} Cena: {{ $term->price }}
                                 <a href="{{action("TermsController@edit", $term->id)}}" class = "btn btn-success mx-1">Upravit</a>
                                     <form method="POST" action="{{action("TermsController@destroy", $term->id) }}">
                                     @method("DELETE")

@@ -15,9 +15,10 @@ class InquiryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
     public function index()
     {        
-        $inquiries = Inquiry::orderBy("created_at", "asc")->get();
+        $inquiries = Inquiry::orderBy("created_at", "asc")->where("resolved", false)->get();
 
         return view ("inquiries.index", compact("inquiries"));
     }
