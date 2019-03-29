@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Term extends Model
 {
+    protected $dates = ["start", "end"];
+
     protected $guarded = [];
     
     public function camp()
