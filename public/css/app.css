@@ -10835,6 +10835,12 @@ body .panel-heading h4 a {
   }
 }
 
+@media all and (max-width: 400px) {
+  .term {
+    flex-direction: column;
+  }
+}
+
 * {
   box-sizing: border-box;
 }
