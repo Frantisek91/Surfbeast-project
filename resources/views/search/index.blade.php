@@ -27,7 +27,7 @@
                     <div class="formicka">
                         <input type="number" name="price_max" class="form-control" placeholder="do"/>
                     </div>
-                    <button type="submit" class="btn btn-primary">Najdi surf kemp</button>
+                    <button type="submit" class="btn btn-primary">Najdi&nbsp;surf&nbsp;kemp</button>
             
                 </form>
                 <br>
